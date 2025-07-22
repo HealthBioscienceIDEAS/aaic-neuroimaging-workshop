@@ -329,7 +329,7 @@
 <ul>
 <li>How is imaging data represented in a computer?</li>
 <li>What are some of the popular imaging formats used?</li>
-<li>How do I view and navigate around an image/</li>
+<li>How do I view and navigate around an image?</li>
 </ul>
 </div>
 </div>
@@ -924,10 +924,10 @@ with the left mouse button, to pan around.</li>
 <div class="section level3">
 <h3 id="the-display-toolbar">The display toolbar<a class="anchor" aria-label="anchor" href="#the-display-toolbar"></a>
 </h3>
-<p><img src="../fig/display_toolbar.png" alt="Display toolbar" height="180" class="figure"> The display toolbar allows you to adjust the display
-properties of the currently selected image. Play around with the
-controls and note how the image display changes (but leave the “overlay
-type” as “3D/4D volume”).</p>
+<figure><img src="../fig/display_toolbar.png" alt="Display toolbar" height="180" class="figure mx-auto d-block"></figure><p>The display toolbar allows you to adjust the display properties of
+the currently selected image. Play around with the controls and note how
+the image display changes (but leave the “overlay type” as “3D/4D
+volume”).</p>
 <p>The word “overlay” is interchangeable with “image”. FSLeyes uses
 “overlay” because it can also load some other non-image file types such
 as surface images.</p>
@@ -1093,8 +1093,8 @@ view the overlay source (e.g. its location in the file system).</li>
 <hr class="half-width">
 <p>In the bottom right corner of the FSLeyes window you will find the
 location panel, which contains information about the current cursor
-location, and image data values at that location. <img src="../fig/location_panel_oasis.png" alt="Location panel" height="140" class="figure"></p>
-<p>The controls on the left show the cursor location in <strong>world
+location, and image data values at that location.</p>
+<figure><img src="../fig/location_panel_oasis.png" alt="Location panel" height="140" class="figure mx-auto d-block"></figure><p>The controls on the left show the cursor location in <strong>world
 coordinates</strong> (millimetres). This coordinate system will change
 depending upon whether your image is in native subject space (scanner
 anatomical coordinates), standard template coordinates (e.g. MNI152), or
@@ -1123,10 +1123,10 @@ instance if you closed it before), press <em>File &gt; Add standard</em>
 and select the image <code>MNI152_T1_1mm</code>.</p>
 <p>As you can see it looks very similar to the T1w image we looked at
 earlier. This is basically an <em>average T1w</em>.</p>
-<p>Because we are in standard space, we can turn on the atlas tools with
-<em>Settings &gt; Ortho View 1 &gt; Atlases</em>.</p>
 </li>
 <li>
+<p>Because we are in standard space, we can turn on the atlas tools
+with <em>Settings &gt; Ortho View 1 &gt; Atlases</em>.</p>
 <p>Now as you click around in the image you can see reporting of the
 probability of being in different brain structures. You might want to
 resize the different FSLeyes panels to increase the size of the Atlas
@@ -1143,13 +1143,13 @@ practical.</p>
 <h3 id="atlas-information">Atlas information<a class="anchor" aria-label="anchor" href="#atlas-information"></a>
 </h3>
 <p>The <strong>Atlas information</strong> tab displays information about
-the current display location, relative to one or more atlases: <img src="../fig/atlas_info_panel.png" alt="Atlas information panel" height="200" class="figure"> The list on the left allows you to select the atlases
-that you wish to query - click the check boxes to the left of an atlas
-to toggle information on and off for that atlas. The
-<strong>Harvard-Oxford cortical</strong> and
-<strong>sub-cortical</strong> structural atlases are both selected by
-default. These are formed by averaging careful hand segmentations of
-structural images of many separate individuals.</p>
+the current display location, relative to one or more atlases:</p>
+<figure><img src="../fig/atlas_info_panel.png" alt="Atlas information panel" height="200" class="figure mx-auto d-block"></figure><p>The list on the left allows you to select the atlases that you wish
+to query - click the check boxes to the left of an atlas to toggle
+information on and off for that atlas. The <strong>Harvard-Oxford
+cortical</strong> and <strong>sub-cortical</strong> structural atlases
+are both selected by default. These are formed by averaging careful hand
+segmentations of structural images of many separate individuals.</p>
 <p>The panel on the right displays information about the current display
 location from each selected atlas. For probabilistic atlases, the
 region(s) corresponding to the display location are listed, along with
@@ -1163,8 +1163,8 @@ off.</p>
 <h3 id="atlas-search">Atlas search<a class="anchor" aria-label="anchor" href="#atlas-search"></a>
 </h3>
 <p>The <strong>Atlas search</strong> tab allows you to browse through
-the atlases, and search for specific regions. <img src="../fig/atlas_search_panel.png" alt="Atlas search panel" height="200" class="figure"></p>
-<p>The list on the left displays all available atlases - the checkbox to
+the atlases, and search for specific regions.</p>
+<figure><img src="../fig/atlas_search_panel.png" alt="Atlas search panel" height="200" class="figure mx-auto d-block"></figure><p>The list on the left displays all available atlases - the checkbox to
 the left of each atlas toggles an image for that atlas on and off.</p>
 <p>When you select an atlas in this list, all of the regions in that
 atlas are listed in the area to the right. Again, the checkbox to the
@@ -1172,8 +1172,8 @@ left of each region name toggles an image for that region on and off.
 The + button next to each region moves the display location to the
 (approximate) centre of that region.</p>
 <p>The search field at the top of the region list allows you to filter
-the regions that are displayed. <img src="../fig/atlas_region_search.png" alt="Atlas region search" height="200" class="figure"></p>
-<p>When you type some characters into the search field, the region list
+the regions that are displayed.</p>
+<figure><img src="../fig/atlas_region_search.png" alt="Atlas region search" height="200" class="figure mx-auto d-block"></figure><p>When you type some characters into the search field, the region list
 will be filtered, so that only those regions with a name that contains
 the characters you entered are displayed. The atlas list on the left
 will also be updated so that any atlases which contain regions matching
@@ -2063,7 +2063,7 @@ finished.</p></li>
 <button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler1" aria-expanded="false" aria-controls="collapseSpoiler1">
   <h3 class="accordion-header" id="headingSpoiler1">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div> Reproducing your work </h3>
 </button>
-<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
+<div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
 <div class="accordion-body">
 <p>When you are using these workflows for your actual research, we
 <strong>highly recommend</strong> that you save the SPM pipelines so
@@ -2179,7 +2179,7 @@ and CSF in the T1 weighted image correctly?</em></p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>You should have an output that looks something like this. <img src="../fig/aic_smri_tissue_seg_check.png" alt="Tissue segmentation check" class="figure"></p>
 </div>
@@ -2370,7 +2370,7 @@ more structural imaging data, please try the exercises below.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb12">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2681,7 +2681,7 @@ type the following into the terminal:</p>
 <button class="accordion-button hint-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseHint1" aria-expanded="false" aria-controls="collapseHint1">
   <h4 class="accordion-header" id="headingHint1"> Give me a hint </h4>
 </button>
-<div id="collapseHint1" class="accordion-collapse collapse" aria-labelledby="headingHint1" data-bs-parent="#accordionHint1">
+<div id="collapseHint1" class="accordion-collapse collapse" data-bs-parent="#accordionHint1" aria-labelledby="headingHint1">
 <div class="accordion-body">
 <p>Open up multiple terminal windows to view the .json file contents
 side-by-side.</p>
@@ -3192,7 +3192,7 @@ SUVR image you created in the tutorial.</p>
 <button class="accordion-button hint-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseHint2" aria-expanded="false" aria-controls="collapseHint2">
   <h4 class="accordion-header" id="headingHint2"> Give me a hint </h4>
 </button>
-<div id="collapseHint2" class="accordion-collapse collapse" aria-labelledby="headingHint2" data-bs-parent="#accordionHint2">
+<div id="collapseHint2" class="accordion-collapse collapse" data-bs-parent="#accordionHint2" aria-labelledby="headingHint2">
 <div class="accordion-body">
 <p>Pay close attention to the display settings for the window and
 colormap.</p>
@@ -3221,7 +3221,7 @@ a SUVR image for the MK-6240 scan.</p>
 <button class="accordion-button hint-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseHint3" aria-expanded="false" aria-controls="collapseHint3">
   <h4 class="accordion-header" id="headingHint3"> Give me a hint </h4>
 </button>
-<div id="collapseHint3" class="accordion-collapse collapse" aria-labelledby="headingHint3" data-bs-parent="#accordionHint3">
+<div id="collapseHint3" class="accordion-collapse collapse" data-bs-parent="#accordionHint3" aria-labelledby="headingHint3">
 <div class="accordion-body">
 <p>You’ll need to look at the .json file for the TAU PET NIfTI file -
 this will contain key information around timing and framing so that you
@@ -3617,7 +3617,7 @@ relying on data organized according to the BIDS structure.</p>
 <button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler1" aria-expanded="false" aria-controls="collapseSpoiler1">
   <h3 class="accordion-header" id="headingSpoiler1">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div> The command should show the following content </h3>
 </button>
-<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
+<div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
 <div class="accordion-body">
 <figure><img src="../fig/bval_bvec.png" alt="example of bval and bvec file" class="figure mx-auto d-block"></figure><ul>
 <li>The nifti file is a 4D file of all the directions acquired.</li>
@@ -3647,7 +3647,7 @@ file. How can you know how many directions it contains?</p>
 <button class="accordion-button hint-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseHint1" aria-expanded="false" aria-controls="collapseHint1">
   <h4 class="accordion-header" id="headingHint1"> Give me a hint </h4>
 </button>
-<div id="collapseHint1" class="accordion-collapse collapse" aria-labelledby="headingHint1" data-bs-parent="#accordionHint1">
+<div id="collapseHint1" class="accordion-collapse collapse" data-bs-parent="#accordionHint1" aria-labelledby="headingHint1">
 <div class="accordion-body">
 <p>Refer to the <a href="imaging-data-structure-and-formats.html">Getting started
 session</a> for more details!</p>
@@ -3660,7 +3660,7 @@ session</a> for more details!</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>There is 1 b0 image and 64 gradient images! You can check for the
 maximum number as you move through the “Volume” box as shown below.</p>

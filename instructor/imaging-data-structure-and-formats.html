@@ -304,7 +304,7 @@
 <h3 class="card-title">Questions</h3>
 <ul><li>How is imaging data represented in a computer?</li>
 <li>What are some of the popular imaging formats used?</li>
-<li>How do I view and navigate around an image/</li>
+<li>How do I view and navigate around an image?</li>
 </ul></div>
 </div>
 </div>
@@ -851,10 +851,10 @@ with the left mouse button, to pan around.</li>
 </ul></div>
 <div class="section level3">
 <h3 id="the-display-toolbar">The display toolbar<a class="anchor" aria-label="anchor" href="#the-display-toolbar"></a></h3>
-<p><img src="../fig/display_toolbar.png" alt="Display toolbar" height="180" class="figure"> The display toolbar allows you to adjust the display
-properties of the currently selected image. Play around with the
-controls and note how the image display changes (but leave the “overlay
-type” as “3D/4D volume”).</p>
+<figure><img src="../fig/display_toolbar.png" alt="Display toolbar" height="180" class="figure mx-auto d-block"></figure><p>The display toolbar allows you to adjust the display properties of
+the currently selected image. Play around with the controls and note how
+the image display changes (but leave the “overlay type” as “3D/4D
+volume”).</p>
 <p>The word “overlay” is interchangeable with “image”. FSLeyes uses
 “overlay” because it can also load some other non-image file types such
 as surface images.</p>
@@ -1006,8 +1006,8 @@ view the overlay source (e.g. its location in the file system).</li>
 </ul></section><section><h2 class="section-heading" id="image-information">Image information<a class="anchor" aria-label="anchor" href="#image-information"></a></h2>
 <hr class="half-width"><p>In the bottom right corner of the FSLeyes window you will find the
 location panel, which contains information about the current cursor
-location, and image data values at that location. <img src="../fig/location_panel_oasis.png" alt="Location panel" height="140" class="figure"></p>
-<p>The controls on the left show the cursor location in <strong>world
+location, and image data values at that location.</p>
+<figure><img src="../fig/location_panel_oasis.png" alt="Location panel" height="140" class="figure mx-auto d-block"></figure><p>The controls on the left show the cursor location in <strong>world
 coordinates</strong> (millimetres). This coordinate system will change
 depending upon whether your image is in native subject space (scanner
 anatomical coordinates), standard template coordinates (e.g. MNI152), or
@@ -1033,10 +1033,10 @@ instance if you closed it before), press <em>File &gt; Add standard</em>
 and select the image <code>MNI152_T1_1mm</code>.</p>
 <p>As you can see it looks very similar to the T1w image we looked at
 earlier. This is basically an <em>average T1w</em>.</p>
-<p>Because we are in standard space, we can turn on the atlas tools with
-<em>Settings &gt; Ortho View 1 &gt; Atlases</em>.</p>
 </li>
 <li>
+<p>Because we are in standard space, we can turn on the atlas tools
+with <em>Settings &gt; Ortho View 1 &gt; Atlases</em>.</p>
 <p>Now as you click around in the image you can see reporting of the
 probability of being in different brain structures. You might want to
 resize the different FSLeyes panels to increase the size of the Atlas
@@ -1051,13 +1051,13 @@ practical.</p>
 </ul><div class="section level3">
 <h3 id="atlas-information">Atlas information<a class="anchor" aria-label="anchor" href="#atlas-information"></a></h3>
 <p>The <strong>Atlas information</strong> tab displays information about
-the current display location, relative to one or more atlases: <img src="../fig/atlas_info_panel.png" alt="Atlas information panel" height="200" class="figure"> The list on the left allows you to select the atlases
-that you wish to query - click the check boxes to the left of an atlas
-to toggle information on and off for that atlas. The
-<strong>Harvard-Oxford cortical</strong> and
-<strong>sub-cortical</strong> structural atlases are both selected by
-default. These are formed by averaging careful hand segmentations of
-structural images of many separate individuals.</p>
+the current display location, relative to one or more atlases:</p>
+<figure><img src="../fig/atlas_info_panel.png" alt="Atlas information panel" height="200" class="figure mx-auto d-block"></figure><p>The list on the left allows you to select the atlases that you wish
+to query - click the check boxes to the left of an atlas to toggle
+information on and off for that atlas. The <strong>Harvard-Oxford
+cortical</strong> and <strong>sub-cortical</strong> structural atlases
+are both selected by default. These are formed by averaging careful hand
+segmentations of structural images of many separate individuals.</p>
 <p>The panel on the right displays information about the current display
 location from each selected atlas. For probabilistic atlases, the
 region(s) corresponding to the display location are listed, along with
@@ -1070,8 +1070,8 @@ off.</p>
 <div class="section level3">
 <h3 id="atlas-search">Atlas search<a class="anchor" aria-label="anchor" href="#atlas-search"></a></h3>
 <p>The <strong>Atlas search</strong> tab allows you to browse through
-the atlases, and search for specific regions. <img src="../fig/atlas_search_panel.png" alt="Atlas search panel" height="200" class="figure"></p>
-<p>The list on the left displays all available atlases - the checkbox to
+the atlases, and search for specific regions.</p>
+<figure><img src="../fig/atlas_search_panel.png" alt="Atlas search panel" height="200" class="figure mx-auto d-block"></figure><p>The list on the left displays all available atlases - the checkbox to
 the left of each atlas toggles an image for that atlas on and off.</p>
 <p>When you select an atlas in this list, all of the regions in that
 atlas are listed in the area to the right. Again, the checkbox to the
@@ -1079,8 +1079,8 @@ left of each region name toggles an image for that region on and off.
 The + button next to each region moves the display location to the
 (approximate) centre of that region.</p>
 <p>The search field at the top of the region list allows you to filter
-the regions that are displayed. <img src="../fig/atlas_region_search.png" alt="Atlas region search" height="200" class="figure"></p>
-<p>When you type some characters into the search field, the region list
+the regions that are displayed.</p>
+<figure><img src="../fig/atlas_region_search.png" alt="Atlas region search" height="200" class="figure mx-auto d-block"></figure><p>When you type some characters into the search field, the region list
 will be filtered, so that only those regions with a name that contains
 the characters you entered are displayed. The atlas list on the left
 will also be updated so that any atlases which contain regions matching
