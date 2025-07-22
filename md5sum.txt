@@ -12,6 +12,6 @@
 "episodes/command-line.Rmd" "91356ccdd0f4c127d4aee6f3f0ea68b4" "site/built/command-line.md" "2025-07-22"
 "instructors/instructor-notes.md" "5cf113fd22defb29d17b64597f3c9bc0" "site/built/instructor-notes.md" "2025-07-22"
 "learners/setup.md" "7080db6a1bfd1dc7e4d5c501465d1cff" "site/built/setup.md" "2025-07-22"
-"learners/virtual-machine.md" "aece01ff985e6d6158130e70439c6e33" "site/built/virtual-machine.md" "2025-07-22"
+"learners/virtual-machine.md" "d65e41f3261ac1e2003b28c9f1897ca9" "site/built/virtual-machine.md" "2025-07-22"
 "profiles/learner-profiles.md" "5fe5bf7537072422b91ed393ada03f9a" "site/built/learner-profiles.md" "2025-07-22"
 "renv/profiles/lesson-requirements/renv.lock" "92ae83c2904f2017f4215aaaca8b1206" "site/built/renv.lock" "2025-07-22"
