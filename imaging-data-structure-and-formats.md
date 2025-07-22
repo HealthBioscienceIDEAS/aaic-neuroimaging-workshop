@@ -8,7 +8,7 @@ exercises: 2
 
 - How is imaging data represented in a computer?
 - What are some of the popular imaging formats used?
-- How do I view and navigate around an image/
+- How do I view and navigate around an image?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -455,6 +455,7 @@ left mouse button, to pan around.
 
 ### The display toolbar
 ![](fig/display_toolbar.png){alt="Display toolbar" height='180px'}
+
 The display toolbar allows you to adjust the display properties of the 
 currently selected image. Play around with the controls and note how the image 
 display changes (but leave the "overlay type" as "3D/4D volume").
@@ -603,6 +604,7 @@ The overlay list allows you to do the following:
 ## Image information
 
 In the bottom right corner of the FSLeyes window you will find the location panel, which contains information about the current cursor location, and image data values at that location.
+
 ![](fig/location_panel_oasis.png){alt="Location panel" height='140px'}
 
 The controls on the left show the cursor location in **world coordinates** 
@@ -636,13 +638,12 @@ _File > Add standard_ and select the image `MNI152_T1_1mm`.
     As you can see it looks very similar to the T1w image we looked at earlier.
     This is basically an _average T1w_.
     
-    Because we are in standard space, we can turn on the atlas tools with 
+- Because we are in standard space, we can turn on the atlas tools with 
     _Settings &gt; Ortho View 1 &gt; Atlases_. 
-- Now as you click around in the image you can see reporting of the 
-probability of being in different brain  structures. You might want to resize 
-the different FSLeyes panels to increase the size of the Atlas information 
-space (in general you do this by dragging around the edges of the 
-different FSLeyes panels).
+
+    Now as you click around in the image you can see reporting of the probability of being in different brain structures.
+    You might want to resize the different FSLeyes panels to increase the size of the Atlas information space
+    (in general you do this by dragging around the edges of the different FSLeyes panels).
 
     The atlas panel is organized into three main sections - _Atlas information_, 
     _Atlas search_, and _Atlas management_. These sections are accessed by 
@@ -653,7 +654,9 @@ different FSLeyes panels).
 
 The **Atlas information** tab displays information about the current display 
 location, relative to one or more atlases:
+
 ![](fig/atlas_info_panel.png){alt="Atlas information panel" height='200px'}
+
 The list on the left allows you to select the atlases that you wish to query - 
 click the check boxes to the left of an atlas to toggle information on and off 
 for that atlas. The **Harvard-Oxford cortical** and **sub-cortical** structural 
@@ -673,6 +676,7 @@ to toggle corresponding atlas images on and off.
 
 The **Atlas search** tab allows you to browse through the atlases, and search 
 for specific regions.
+
 ![](fig/atlas_search_panel.png){alt="Atlas search panel" height='200px'}
 
 The list on the left displays all available atlases - the checkbox to the left 
@@ -686,6 +690,7 @@ region.
 
 The search field at the top of the region list allows you to filter the regions
 that are displayed.
+
 ![](fig/atlas_region_search.png){alt="Atlas region search" height='200px'}
 
 When you type some characters into the search field, the region list will be 
