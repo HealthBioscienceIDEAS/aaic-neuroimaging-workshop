@@ -23,6 +23,13 @@ pre-processing steps for fMRI, DTI, and PET. The objective of the workshop is to
 participants gain an in-depth appreciation of commonly used interpretive 
 clinical and or research applications for each methodology. 
 
+This workshop uses virtual machines in the cloud. For more information on using 
+the virtual machine for this immersive, please visit the following page:
+
+[Working with the Virtual Machine](learners/virtual-machine.md)
+
+
+
 ### Target Audience
 This hands-on workshop can serve as a beginner or refresher course for 
 established investigators, clinicians, and trainees involved in using imaging 
