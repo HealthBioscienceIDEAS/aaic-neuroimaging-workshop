@@ -73,7 +73,7 @@
           <button class="nav-link dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-expanded="false">
             More <i data-feather="chevron-down"></i>
           </button>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown"><li><a class="dropdown-item" href="reference.html">Reference</a></li>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown"><li><a class="dropdown-item" href="virtual-machine.html">Working with the Virtual Machine</a></li>
           </ul></li>
       </ul></div>
     <!--
@@ -169,6 +169,7 @@
 <li><a href="#viewing-multiple-images">Viewing multiple images</a></li>
 <li><a href="#image-information">Image information</a></li>
 <li><a href="#viewing-atlases">Viewing Atlases</a></li>
+<li><a href="#next-steps">Next steps</a></li>
 <li><a href="#additional-material">Additional material</a></li>
 <li><a href="#references">References</a></li>
         </ul></div><!--/div.accordion-body-->
@@ -244,7 +245,7 @@
                       <li>
                         <a href="profiles.html">Learner Profiles</a>
                       </li>
-                      <li><a href="reference.html">Reference</a></li>
+                      <li><a href="virtual-machine.html">Working with the Virtual Machine</a></li>
                     </ul></div>
                 </div>
               </div>
@@ -1096,13 +1097,9 @@ right).</p>
 <a href="https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/Atlases" class="external-link">FSL
 Wiki</a>.</p>
 <p>Quit FSLeyes when you have finished looking at the atlases.</p>
-<div id="bonus-exercise-viewing-different-imaging-modalities" class="callout challenge">
-<div class="callout-square">
-<i class="callout-icon" data-feather="zap"></i>
 </div>
-<div id="bonus-exercise-viewing-different-imaging-modalities" class="callout-inner">
-<h3 class="callout-title">BONUS EXERCISE: Viewing different imaging modalities</h3>
-<div class="callout-content">
+<div class="section level3">
+<h3 id="bonus-exercise-viewing-different-imaging-modalities">BONUS EXERCISE: Viewing different imaging modalities<a class="anchor" aria-label="anchor" href="#bonus-exercise-viewing-different-imaging-modalities"></a></h3>
 <p>So far we have seen examples of MRI T1-weighted scans (T1w). In
 research as well as in clinical setting, we acquire multiple imaging
 modalities from the same individual to look at different brain
@@ -1117,21 +1114,15 @@ session, the images may differ in orientation and resolution.</p>
 <p>Let’s take two imaging modalities from a different participant:
 <code>sub-OAS30003_T1w.nii.gz</code> and
 <code>sub-OAS30003_FLAIR.nii.gz</code></p>
-<ul><li><em>Do they have the same dimension?</em></li>
-<li><em>Do they have the same resolution?</em></li>
-</ul><p>Now let’s have a look at them in FSLeyes:</p>
-<div class="codewrapper sourceCode" id="cb12">
-<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a><span class="ex">fsleyes</span> sub-OAS30003_T1w.nii.gz sub-OAS30003_FLAIR.nii.gz <span class="kw">&amp;</span></span></code></pre>
+<div id="challenge2" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
 </div>
-<p>Change the intensity range for both images to be between 0 and 1000.
-Show/hide images with the eye button ( <img src="fig/eye_icon.png" alt="eye icon" height="24" class="figure"> ), or by double clicking on the image name
-in the overlay list.</p>
-<ul><li><em>Do they have the same orientation?</em></li>
-<li><em>Which brain characteristics are more visible in the T1w and
-which are more visible on FLAIR?</em></li>
-</ul></div>
+<div class="callout-inner">
+<h3 class="callout-title">Challenge</h3>
+<div class="callout-content">
+<p><em>Do they have the same dimension?</em></p>
+</div>
 </div>
 </div>
 <div id="accordionHint1" class="accordion challenge-accordion accordion-flush">
@@ -1141,11 +1132,9 @@ which are more visible on FLAIR?</em></li>
 </button>
 <div id="collapseHint1" class="accordion-collapse collapse" aria-labelledby="headingHint1" data-bs-parent="#accordionHint1">
 <div class="accordion-body">
-<ul><li>Use <code>fslhd</code> to get information on dimension and voxel
-size.</li>
-<li>Look at the location panel to help with information about
-orientation</li>
-</ul></div>
+<p>Use <code>fslhd</code> to get information on dimension and voxel
+size.</p>
+</div>
 </div>
 </div>
 </div>
@@ -1156,69 +1145,24 @@ orientation</li>
 </button>
 <div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
-<p><em>Do the T1 and the FLAIR have the same dimension?</em></p>
-<p><strong>No</strong>-Using <code>fslhd</code>, we can see that the
-dimensions (<code>dim1</code>, <code>dim2</code>, and <code>dim3</code>)
-of the T1 are 176 x 240 x 161 and the dimensions of the FLAIR image are
-256 x 256 x 35.</p>
-<p><em>Do the T1 and the FLAIR have the same resolution?</em></p>
-<p><strong>No</strong>-From the same <code>fslhd</code> commands, the
-resolution can be found in the fields <code>pixdim1</code>,
-<code>pixdim2</code>, and <code>pixdim3</code>. For the T1 the
-resolution is 1.20 x 1.05 x 1.05 mm. For the FLAIR it is 0.859 x 0.859 x
-5.00mm</p>
-<p><em>Do the T1 and the FLAIR have the same orientation?</em></p>
-<p><strong>No</strong> In the bottom right panel you should see the
-warning: “Images have different orientations/fields of view”</p>
-<p><em>What brain characteristics are more visible in the T1w and which
-are more visible on FLAIR?</em></p>
-<p>On T1w, grey and white matter are more easily distinguishable. On
-FLAIR, brain lesions – white matter hyperintensities – are more clearly
-visible</p>
+<p><strong>No</strong></p>
+<p>Using <code>fslhd</code>, we can see that the dimensions
+(<code>dim1</code>, <code>dim2</code>, and <code>dim3</code>) of the T1
+are 176 x 240 x 161 and the dimensions of the FLAIR image are 256 x 256
+x 35.</p>
 </div>
 </div>
 </div>
 </div>
-<div id="bonus-exercise-dicom-to-nifti" class="callout challenge">
+<div id="challenge3" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
-<div id="bonus-exercise-dicom-to-nifti" class="callout-inner">
-<h3 class="callout-title">BONUS EXERCISE: DICOM to NIfTI</h3>
+<div class="callout-inner">
+<h3 class="callout-title">Challenge</h3>
 <div class="callout-content">
-<p>As discussed earlier, if you have received medical imaging data from
-a hosptial it is likely in DICOM format. However, most of the software
-you are likely to use wants medical images in a more manageable format,
-typically NIfTI images. There are many ways to convert between the two,
-but probably the most widely used is <a href="https://www.nitrc.org/plugins/mwiki/index.php/dcm2nii:MainPage" class="external-link">dcm2niix</a>).</p>
-<p>You can find the sample data in
-<code>~/data/ImageDataVisualization/DICOM</code>. Let’s first change
-into this directory</p>
-<div class="codewrapper sourceCode" id="cb13">
-<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a><span class="bu">cd</span> ~/data/ImageDataVisualization/DICOM</span></code></pre>
+<p><em>Do they have the same resolution?</em></p>
 </div>
-<p>If you list the contents, you will see a single folder called
-<code>Subject01</code></p>
-<p>Let’s first make a directory for the Nifti output</p>
-<div class="codewrapper sourceCode" id="cb14">
-<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" tabindex="-1"></a><span class="fu">mkdir</span> Nifti</span></code></pre>
-</div>
-<ol style="list-style-type: decimal"><li>How do we know how to use this command?</li>
-<li>Construct a command to convert the images and put them in the
-directory
-<code>data/ImageDataVisualization/DICOM/Subject01/Nifti</code>
-</li>
-<li>Figure out what option to use to store a compressed gzipped-version
-of the NIfTI file.</li>
-<li>Try out some different options to make the name easier to
-manage.</li>
-<li>Look at the converted NIfTI images in <code>fsleyes</code>. What
-modalities are they?</li>
-</ol></div>
 </div>
 </div>
 <div id="accordionHint2" class="accordion challenge-accordion accordion-flush">
@@ -1228,7 +1172,8 @@ modalities are they?</li>
 </button>
 <div id="collapseHint2" class="accordion-collapse collapse" aria-labelledby="headingHint2" data-bs-parent="#accordionHint2">
 <div class="accordion-body">
-<p>We covered how to get help for a command in an earlier section.</p>
+<p>Use <code>fslhd</code> to get information on dimension and voxel
+size.</p>
 </div>
 </div>
 </div>
@@ -1240,48 +1185,536 @@ modalities are they?</li>
 </button>
 <div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
-<ol style="list-style-type: decimal"><li>
-<p>To get help, we use the -h option:</p>
-<div class="codewrapper sourceCode" id="cb15">
+<p><strong>No</strong></p>
+<p>From the same <code>fslhd</code> commands, the resolution can be
+found in the fields <code>pixdim1</code>, <code>pixdim2</code>, and
+<code>pixdim3</code>. For the T1 the resolution is 1.20 x 1.05 x 1.05
+mm. For the FLAIR it is 0.859 x 0.859 x 5.00mm</p>
+</div>
+</div>
+</div>
+</div>
+<p>Now let’s have a look at them in FSLeyes:</p>
+<div class="codewrapper sourceCode" id="cb12">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" tabindex="-1"></a><span class="ex">dcm2niix</span> <span class="at">-h</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a><span class="ex">fsleyes</span> sub-OAS30003_T1w.nii.gz sub-OAS30003_FLAIR.nii.gz <span class="kw">&amp;</span></span></code></pre>
 </div>
-</li>
-<li>
-<p>The simplest command to do this is</p>
+<p>Change the intensity range for both images to be between 0 and 1000.
+Show/hide images with the eye button ( <img src="fig/eye_icon.png" alt="eye icon" height="24" class="figure"> ), or by double clicking on the image name
+in the overlay list.</p>
+<div id="challenge4" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
+</div>
+<div class="callout-inner">
+<h3 class="callout-title">Challenge</h3>
+<div class="callout-content">
+<p><em>Do they have the same orientation?</em></p>
+</div>
+</div>
+</div>
+<div id="accordionHint3" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button hint-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseHint3" aria-expanded="false" aria-controls="collapseHint3">
+  <h4 class="accordion-header" id="headingHint3"> Give me a hint </h4>
+</button>
+<div id="collapseHint3" class="accordion-collapse collapse" aria-labelledby="headingHint3" data-bs-parent="#accordionHint3">
+<div class="accordion-body">
+<p>Look at the location panel to help with information about
+orientation</p>
+</div>
+</div>
+</div>
+</div>
+<div id="accordionSolution4" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
+  <h4 class="accordion-header" id="headingSolution4"> Show me the solution </h4>
+</button>
+<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
+<div class="accordion-body">
+<p><strong>No</strong></p>
+<p>In the bottom right panel you should see the warning: “Images have
+different orientations/fields of view”</p>
+</div>
+</div>
+</div>
+</div>
+<div id="challenge5" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
+</div>
+<div class="callout-inner">
+<h3 class="callout-title">Challenge</h3>
+<div class="callout-content">
+<p><em>Which brain characteristics are more visible in the T1w and which
+are more visible on FLAIR?</em></p>
+</div>
+</div>
+</div>
+<div id="accordionHint4" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button hint-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseHint4" aria-expanded="false" aria-controls="collapseHint4">
+  <h4 class="accordion-header" id="headingHint4"> Give me a hint </h4>
+</button>
+<div id="collapseHint4" class="accordion-collapse collapse" aria-labelledby="headingHint4" data-bs-parent="#accordionHint4">
+<div class="accordion-body">
+<p>Look at the location panel to help with information about
+orientation</p>
+</div>
+</div>
+</div>
+</div>
+<div id="accordionSolution5" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution5" aria-expanded="false" aria-controls="collapseSolution5">
+  <h4 class="accordion-header" id="headingSolution5"> Show me the solution </h4>
+</button>
+<div id="collapseSolution5" class="accordion-collapse collapse" aria-labelledby="headingSolution5" data-bs-parent="#accordionSolution5">
+<div class="accordion-body">
+<ul><li>On T1w, grey and white matter are more easily distinguishable.</li>
+<li>On FLAIR, brain lesions – white matter hyperintensities – are more
+clearly visible</li>
+</ul></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section level3">
+<h3 id="bonus-exercise-dicom-to-nifti">BONUS EXERCISE: DICOM to NIfTI<a class="anchor" aria-label="anchor" href="#bonus-exercise-dicom-to-nifti"></a></h3>
+<p>As discussed earlier, if you have received medical imaging data from
+a hospital, it is likely in DICOM format. However, most of the
+neuroimaging software packages that you are likely to use will work with
+medical images in a more manageable format, typically NIfTI images.
+There are many ways to convert between the two, but probably the most
+widely used is <a href="https://www.nitrc.org/plugins/mwiki/index.php/dcm2nii:MainPage" class="external-link">dcm2niix</a>).</p>
+<p>You can find the sample data in
+<code>~/data/ImageDataVisualization/DICOM</code>. These example data
+sets come from Chris Rorden’s <a href="https://github.com/neurolabusc/dcm_validate" class="external-link">dcm_validate data
+set</a>. More information on this validation data set can be found in
+the <a href="https://www.nature.com/articles/s41597-025-05503-w" class="external-link">accompanying
+paper</a>.</p>
+<p>First let’s change into the following directory</p>
+<div class="codewrapper sourceCode" id="cb13">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a><span class="bu">cd</span> ~/data/ImageDataVisualization/DICOM</span></code></pre>
+</div>
+<p>If you list the contents, you will see two separate subfolders:</p>
+<div class="codewrapper sourceCode" id="cb14">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" tabindex="-1"></a><span class="fu">ls</span></span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>dcm_qa_xa30  dcm_qa_xa30i</code></pre>
+</div>
+<p>Let’s first make a directory for the Nifti output</p>
 <div class="codewrapper sourceCode" id="cb16">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" tabindex="-1"></a><span class="ex">dcm2niix</span> <span class="at">-o</span> Nifti Subject01</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" tabindex="-1"></a><span class="fu">mkdir</span> Nifti</span></code></pre>
 </div>
-</li>
-<li>
-<p>To zip the file, we use the -z function:</p>
+<p>We will now use <code>dcm2niix</code> to convert these DICOM data
+sets to Nifti.</p>
+<div id="challenge6" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
+</div>
+<div class="callout-inner">
+<h3 class="callout-title">Challenge</h3>
+<div class="callout-content">
+<p><em>How can we figure out how to use this command?</em></p>
+</div>
+</div>
+</div>
+<div id="accordionHint5" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button hint-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseHint5" aria-expanded="false" aria-controls="collapseHint5">
+  <h4 class="accordion-header" id="headingHint5"> Give me a hint </h4>
+</button>
+<div id="collapseHint5" class="accordion-collapse collapse" aria-labelledby="headingHint5" data-bs-parent="#accordionHint5">
+<div class="accordion-body">
+<p>We covered how to get help for a command in an earlier section.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="accordionSolution6" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution6" aria-expanded="false" aria-controls="collapseSolution6">
+  <h4 class="accordion-header" id="headingSolution6"> Show me the solution </h4>
+</button>
+<div id="collapseSolution6" class="accordion-collapse collapse" aria-labelledby="headingSolution6" data-bs-parent="#accordionSolution6">
+<div class="accordion-body">
+<p>To get help, we use the -h option:</p>
 <div class="codewrapper sourceCode" id="cb17">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" tabindex="-1"></a><span class="ex">dcm2niix</span> <span class="at">-z</span> y <span class="at">-o</span> Nifti Subject01</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" tabindex="-1"></a><span class="ex">dcm2niix</span> <span class="at">-h</span></span></code></pre>
 </div>
-</li>
-<li>
-<p>To change the naming structure, we use the -f function. How you
-name them tends to be your personal choice, and many people choose to
-use the BIDS standard for naming the data.</p>
-<div class="codewrapper sourceCode" id="cb18">
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>Chris Rorden's dcm2niiX version v1.0.20240202  GCC12.3.0 x86-64 (64-bit Linux)
+usage: dcm2niix [options] &lt;in_folder&gt;
+ Options :
+  -1..-9 : gz compression level (1=fastest..9=smallest, default 6)
+  -a : adjacent DICOMs (images from same series always in same folder) for faster conversion (n/y, default n)
+  -b : BIDS sidecar (y/n/o [o=only: no NIfTI], default y)
+   -ba : anonymize BIDS (y/n, default y)
+  -c : comment stored in NIfTI aux_file (up to 24 characters e.g. '-c VIP', empty to anonymize e.g. 0020,4000 e.g. '-c ""')
+  -d : directory search depth. Convert DICOMs in sub-folders of in_folder? (0..9, default 5)
+  -e : export as NRRD (y) or MGH (o) or JSON/JNIfTI (j) or BJNIfTI (b) instead of NIfTI (y/n/o/j/b, default n)
+  -f : filename (%a=antenna (coil) name, %b=basename, %c=comments, %d=description, %e=echo number, %f=folder name, %g=accession number, %i=ID of patient, %j=seriesInstanceUID, %k=studyInstanceUID, %m=manufacturer, %n=name of patient, %o=mediaObjectInstanceUID, %p=protocol, %r=instance number, %s=series number, %t=time, %u=acquisition number, %v=vendor, %x=study ID; %z=sequence name; default '%f_%p_%t_%s')
+  -g : generate defaults file (y/n/o/i [o=only: reset and write defaults; i=ignore: reset defaults], default n)
+  -h : show help
+  -i : ignore derived, localizer and 2D images (y/n, default n)
+  -l : losslessly scale 16-bit integers to use dynamic range (y/n/o [yes=scale, no=no, but uint16-&gt;int16, o=original], default o)
+  -m : merge 2D slices from same series regardless of echo, exposure, etc. (n/y or 0/1/2, default 2) [no, yes, auto]
+  -n : only convert this series CRC number - can be used up to 16 times (default convert all)
+  -o : output directory (omit to save to input folder)
+  -p : Philips precise float (not display) scaling (y/n, default y)
+  -q : only search directory for DICOMs (y/l/n, default y) [y=show number of DICOMs found, l=additionally list DICOMs found, n=no]
+  -r : rename instead of convert DICOMs (y/n, default n)
+  -s : single file mode, do not convert other images in folder (y/n, default n)
+  -u : up-to-date check
+  -v : verbose (n/y or 0/1/2, default 0) [no, yes, logorrheic]
+  -w : write behavior for name conflicts (0,1,2, default 2: 0=skip duplicates, 1=overwrite, 2=add suffix)
+  -x : crop 3D acquisitions (y/n/i, default n, use 'i'gnore to neither crop nor rotate 3D acquistions)
+  -z : gz compress images (y/o/i/n/3, default n) [y=pigz, o=optimal pigz, i=internal:miniz, n=no, 3=no,3D]
+  --big-endian : byte order (y/n/o, default o) [y=big-end, n=little-end, o=optimal/native]
+  --progress : Slicer format progress information (y/n, default n)
+  --ignore_trigger_times : disregard values in 0018,1060 and 0020,9153
+  --terse : omit filename post-fixes (can cause overwrites)
+  --version : report version
+  --xml : Slicer format features
+ Defaults file : /home/as2-streaming-user/.dcm2nii.ini
+ Examples :
+  dcm2niix /Users/chris/dir
+  dcm2niix -c "my comment" /Users/chris/dir
+  dcm2niix -o /users/cr/outdir/ -z y ~/dicomdir
+  dcm2niix -f %p_%s -b y -ba n ~/dicomdir
+  dcm2niix -f mystudy%s ~/dicomdir
+  dcm2niix -o "~/dir with spaces/dir" ~/dicomdir
+Example output filename: 'myFolder_MPRAGE_19770703150928_1.nii'</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="challenge7" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
+</div>
+<div class="callout-inner">
+<h3 class="callout-title">Challenge</h3>
+<div class="callout-content">
+<p><em>Choose either the</em> <code>dcm_qa_xa30</code> <em>or the</em>
+<code>dcm_qa_xa30i</code> <em>directory and</em> <em>construct a command
+to convert the images, storing the output in the directory</em>
+<code>~/data/ImageDataVisualization/DICOM/Nifti</code></p>
+</div>
+</div>
+</div>
+<div id="accordionHint6" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button hint-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseHint6" aria-expanded="false" aria-controls="collapseHint6">
+  <h4 class="accordion-header" id="headingHint6"> Give me a hint </h4>
+</button>
+<div id="collapseHint6" class="accordion-collapse collapse" aria-labelledby="headingHint6" data-bs-parent="#accordionHint6">
+<div class="accordion-body">
+<p>Look through the help output and determine which options that you
+will need.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="accordionSolution7" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution7" aria-expanded="false" aria-controls="collapseSolution7">
+  <h4 class="accordion-header" id="headingSolution7"> Show me the solution </h4>
+</button>
+<div id="collapseSolution7" class="accordion-collapse collapse" aria-labelledby="headingSolution7" data-bs-parent="#accordionSolution7">
+<div class="accordion-body">
+<p>The simplest command to do this is below and the expected output
+follows</p>
+<div class="codewrapper sourceCode" id="cb19">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" tabindex="-1"></a><span class="ex">dcm2niix</span> <span class="at">-f</span> %i_%s_%d <span class="at">-z</span> y <span class="at">-o</span> Nifti Subject01</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" tabindex="-1"></a><span class="ex">dcm2niix</span> <span class="at">-o</span> Nifti dcm_qa_xa30</span></code></pre>
 </div>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>Chris Rorden's dcm2niiX version v1.0.20240202  GCC12.3.0 x86-64 (64-bit Linux)
+Found 95 DICOM file(s)
+Skipping non-image DICOM: dcm_qa_xa30/In/15_DWI_dir80_PA/15001_1.3.12.2.1107.5.2.43.67093.2022071112123487825308836_Raw.dcm
+Skipping non-image DICOM: dcm_qa_xa30/In/23_DWI_dir80_AP/23001_1.3.12.2.1107.5.2.43.67093.2022071112140679340412461_Raw.dcm
+Convert 21 DICOM as Nifti/dcm_qa_xa30_DWI_dir80_AP_20220711120427_17 (72x72x39x21)
+Convert 1 DICOM as Nifti/dcm_qa_xa30_DWI_dir80_PA_20220711120427_16 (72x72x39x1)
+Convert 1 DICOM as Nifti/dcm_qa_xa30_DWI_dir80_AP_20220711120427_22 (72x72x39x1)
+Convert 1 DICOM as Nifti/dcm_qa_xa30_gre_field_mapping_20220711120427_9_e2_ph (64x64x33x1)
+Convert 1 DICOM as Nifti/dcm_qa_xa30_asl_2d_tra_20220711120427_28 (64x64x12x1)
+Convert 1 DICOM as Nifti/dcm_qa_xa30_DWI_dir80_PA_20220711120427_14 (72x72x39x1)
+Convert 21 DICOM as Nifti/dcm_qa_xa30_DWI_dir80_PA_20220711120427_10 (72x72x39x21)
+Convert 20 DICOM as Nifti/dcm_qa_xa30_func-bold_task-fa_run-1_20220711120427_7 (64x64x33x20)
+Convert 1 DICOM as Nifti/dcm_qa_xa30_anat-T1w_acq-tfl_20220711120427_5 (128x128x96x1)
+Convert 1 DICOM as Nifti/dcm_qa_xa30_DWI_dir80_PA_20220711120427_13 (72x72x39x1)
+Convert 1 DICOM as Nifti/dcm_qa_xa30_DWI_dir80_PA_20220711120427_12 (72x72x39x1)
+Convert 1 DICOM as Nifti/dcm_qa_xa30_DWI_dir80_AP_20220711120427_19 (72x72x39x1)
+Slices not stacked: echo varies (TE 10, 12.46; echo 1, 2). Use 'merge 2D slices' option to force stacking
+Convert 1 DICOM as Nifti/dcm_qa_xa30_gre_field_mapping_20220711120427_8_e1 (64x64x33x1)
+Convert 1 DICOM as Nifti/dcm_qa_xa30_gre_field_mapping_20220711120427_8_e2 (64x64x33x1)
+Convert 7 DICOM as Nifti/dcm_qa_xa30_asl_2d_tra_20220711120427_25 (64x64x12x7)
+Convert 1 DICOM as Nifti/dcm_qa_xa30_anat-T1w_acq-tfl_20220711120427_6 (128x128x96x1)
+Convert 1 DICOM as Nifti/dcm_qa_xa30_DWI_dir80_AP_20220711120427_24 (72x72x39x1)
+Convert 1 DICOM as Nifti/dcm_qa_xa30_DWI_dir80_PA_20220711120427_11 (72x72x39x1)
+Convert 1 DICOM as Nifti/dcm_qa_xa30_asl_2d_tra_20220711120427_27 (64x64x12x1)
+Convert 1 DICOM as Nifti/dcm_qa_xa30_DWI_dir80_AP_20220711120427_20 (72x72x39x1)
+Convert 1 DICOM as Nifti/dcm_qa_xa30_DWI_dir80_AP_20220711120427_21 (72x72x39x1)
+Conversion required 0.901295 seconds (0.382864 for core code).</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>When we look at the Nifti folders’ contents, we see the following
+output:</p>
+<div class="codewrapper sourceCode" id="cb21">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" tabindex="-1"></a><span class="fu">ls</span> Nifti/</span></code></pre>
+</div>
+<div id="accordionSpoiler4" class="accordion spoiler-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler4" aria-expanded="false" aria-controls="collapseSpoiler4">
+  <h3 class="accordion-header" id="headingSpoiler4">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div> Show details </h3>
+</button>
+<div id="collapseSpoiler4" class="accordion-collapse collapse" aria-labelledby="headingSpoiler4" data-bs-parent="#accordionSpoiler4">
+<div class="accordion-body">
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>dcm_qa_xa30_anat-T1w_acq-tfl_20220711120427_5.json
+dcm_qa_xa30_anat-T1w_acq-tfl_20220711120427_5.nii
+dcm_qa_xa30_anat-T1w_acq-tfl_20220711120427_6.json
+dcm_qa_xa30_anat-T1w_acq-tfl_20220711120427_6.nii
+dcm_qa_xa30_asl_2d_tra_20220711120427_25.json
+dcm_qa_xa30_asl_2d_tra_20220711120427_25.nii
+dcm_qa_xa30_asl_2d_tra_20220711120427_27.json
+dcm_qa_xa30_asl_2d_tra_20220711120427_27.nii
+dcm_qa_xa30_asl_2d_tra_20220711120427_28.json
+dcm_qa_xa30_asl_2d_tra_20220711120427_28.nii
+dcm_qa_xa30_DWI_dir80_AP_20220711120427_17.bval
+dcm_qa_xa30_DWI_dir80_AP_20220711120427_17.bvec
+dcm_qa_xa30_DWI_dir80_AP_20220711120427_17.json
+dcm_qa_xa30_DWI_dir80_AP_20220711120427_17.nii
+dcm_qa_xa30_DWI_dir80_AP_20220711120427_19.json
+dcm_qa_xa30_DWI_dir80_AP_20220711120427_19.nii
+dcm_qa_xa30_DWI_dir80_AP_20220711120427_20.json
+dcm_qa_xa30_DWI_dir80_AP_20220711120427_20.nii
+dcm_qa_xa30_DWI_dir80_AP_20220711120427_21.json
+dcm_qa_xa30_DWI_dir80_AP_20220711120427_21.nii
+dcm_qa_xa30_DWI_dir80_AP_20220711120427_22.json
+dcm_qa_xa30_DWI_dir80_AP_20220711120427_22.nii
+dcm_qa_xa30_DWI_dir80_AP_20220711120427_24.json
+dcm_qa_xa30_DWI_dir80_AP_20220711120427_24.nii
+dcm_qa_xa30_DWI_dir80_PA_20220711120427_10.bval
+dcm_qa_xa30_DWI_dir80_PA_20220711120427_10.bvec
+dcm_qa_xa30_DWI_dir80_PA_20220711120427_10.json
+dcm_qa_xa30_DWI_dir80_PA_20220711120427_10.nii
+dcm_qa_xa30_DWI_dir80_PA_20220711120427_11.json
+dcm_qa_xa30_DWI_dir80_PA_20220711120427_11.nii
+dcm_qa_xa30_DWI_dir80_PA_20220711120427_12.json
+dcm_qa_xa30_DWI_dir80_PA_20220711120427_12.nii
+dcm_qa_xa30_DWI_dir80_PA_20220711120427_13.json
+dcm_qa_xa30_DWI_dir80_PA_20220711120427_13.nii
+dcm_qa_xa30_DWI_dir80_PA_20220711120427_14.json
+dcm_qa_xa30_DWI_dir80_PA_20220711120427_14.nii
+dcm_qa_xa30_DWI_dir80_PA_20220711120427_16.json
+dcm_qa_xa30_DWI_dir80_PA_20220711120427_16.nii
+dcm_qa_xa30_func-bold_task-fa_run-1_20220711120427_7.json
+dcm_qa_xa30_func-bold_task-fa_run-1_20220711120427_7.nii
+dcm_qa_xa30_gre_field_mapping_20220711120427_8_e1.json
+dcm_qa_xa30_gre_field_mapping_20220711120427_8_e1.nii
+dcm_qa_xa30_gre_field_mapping_20220711120427_8_e2.json
+dcm_qa_xa30_gre_field_mapping_20220711120427_8_e2.nii
+dcm_qa_xa30_gre_field_mapping_20220711120427_9_e2_ph.json
+dcm_qa_xa30_gre_field_mapping_20220711120427_9_e2_ph.nii</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>You will see a files that have the same name, but with different
+extensions:</p>
+<ul><li>
+<code>.nii</code> extension: These are the NIfTI files that are the
+main output</li>
+<li>
+<code>.json</code> extension: These are called “sidecars”. They hold
+additional metadata about the image and are needed for compatibility
+with BIDS</li>
+<li>
+<code>.bval</code> and <code>.bvec</code> extensions: These are
+additional files needed to store gradient information for <a href="diffusion-weighted-imaging.html">diffusion imaging</a>
 </li>
-</ol></div>
+</ul><div id="challenge8" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
+</div>
+<div class="callout-inner">
+<h3 class="callout-title">Challenge</h3>
+<div class="callout-content">
+<p><em>Figure out what option to use to store a compressed
+gzipped-version of the NIfTI file.</em></p>
 </div>
 </div>
 </div>
-<p>In the <a href="structural-mri.html">next episode on structural
+<div id="accordionHint7" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button hint-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseHint7" aria-expanded="false" aria-controls="collapseHint7">
+  <h4 class="accordion-header" id="headingHint7"> Give me a hint </h4>
+</button>
+<div id="collapseHint7" class="accordion-collapse collapse" aria-labelledby="headingHint7" data-bs-parent="#accordionHint7">
+<div class="accordion-body">
+<p>Look through the help output and find the option that deals with “gz
+compress images”</p>
+</div>
+</div>
+</div>
+</div>
+<div id="accordionSolution8" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution8" aria-expanded="false" aria-controls="collapseSolution8">
+  <h4 class="accordion-header" id="headingSolution8"> Show me the solution </h4>
+</button>
+<div id="collapseSolution8" class="accordion-collapse collapse" aria-labelledby="headingSolution8" data-bs-parent="#accordionSolution8">
+<div class="accordion-body">
+<p>Here we add the <code>-z y</code> option to the command:</p>
+<div class="codewrapper sourceCode" id="cb23">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1" tabindex="-1"></a><span class="ex">dcm2niix</span> <span class="at">-z</span> y <span class="at">-o</span> Nifti dcm_qa_xa30</span></code></pre>
+</div>
+<p>In the previous command, the Nifti files produced had only the
+<code>.nii</code> extension (for example:
+<code>dcm_qa_xa30_anat-T1w_acq-tfl_20220711120427_5.nii</code>). Now
+these NIfTI files have a <code>.gz</code> at the end –&gt;
+<code>dcm_qa_xa30_anat-T1w_acq-tfl_20220711120427_5.nii.gz</code></p>
+</div>
+</div>
+</div>
+</div>
+<div id="challenge9" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
+</div>
+<div class="callout-inner">
+<h3 class="callout-title">Challenge</h3>
+<div class="callout-content">
+<p><em>Try out some different options to make the name easier to
+manage.</em></p>
+</div>
+</div>
+</div>
+<div id="accordionHint8" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button hint-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseHint8" aria-expanded="false" aria-controls="collapseHint8">
+  <h4 class="accordion-header" id="headingHint8"> Give me a hint </h4>
+</button>
+<div id="collapseHint8" class="accordion-collapse collapse" aria-labelledby="headingHint8" data-bs-parent="#accordionHint8">
+<div class="accordion-body">
+<p>Look through the help output and find the option that deals with
+filenaming</p>
+</div>
+</div>
+</div>
+</div>
+<div id="accordionSolution9" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution9" aria-expanded="false" aria-controls="collapseSolution9">
+  <h4 class="accordion-header" id="headingSolution9"> Show me the solution </h4>
+</button>
+<div id="collapseSolution9" class="accordion-collapse collapse" aria-labelledby="headingSolution9" data-bs-parent="#accordionSolution9">
+<div class="accordion-body">
+<p>To change the naming structure, we use the -f function. Here is a
+refresher of the different elements from DICOM tags that you can use to
+help effectively name your file:</p>
+<pre><code>%a=antenna (coil) name
+%b=basename
+%c=comments
+%d=description
+%e=echo number
+%f=folder name
+%g=accession number
+%i=ID of patient
+%j=seriesInstanceUID
+%k=studyInstanceUID
+%m=manufacturer
+%n=name of patient
+%o=mediaObjectInstanceUID
+%p=protocol
+%r=instance number
+%s=series number
+%t=time
+%u=acquisition number
+%v=vendor
+%x=study ID
+%z=sequence name</code></pre>
+<p>The <code>dcm2niix</code> default is <code>%f_%p_%t_%s</code>. In our
+example:</p>
+<ul><li>
+<code>%f</code> is replaced by the folder name
+<code>dcm_qa_xa30</code>
+</li>
+<li>
+<code>%p</code> is replaced by the protocol
+<code>anat-T1w_acq-tfl</code>
+</li>
+<li>
+<code>%t</code> is replaced by the date and time of the acquisition
+<code>20220711120427</code>
+</li>
+<li>
+<code>%s</code> is replaced by the series number,
+<code>5</code>
+</li>
+</ul><p>How you name them tends to be your personal choice, here is one
+approach</p>
+<div class="codewrapper sourceCode" id="cb25">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb25-1"><a href="#cb25-1" tabindex="-1"></a><span class="ex">dcm2niix</span> <span class="at">-f</span> %i_%s_%d <span class="at">-z</span> y <span class="at">-o</span> Nifti dcm_qa_xa30</span></code></pre>
+</div>
+<p>Here the file that was originally named
+<code>dcm_qa_xa30_anat-T1w_acq-tfl_20220711120427_5.nii</code> is now
+named <code>12343@hucheng_5_anat-T1w_acq-tfl.nii</code></p>
+<p><strong>NOTE</strong> Hucheng is the name of the individual who
+acquiring the data and provided the scans for the valdiation set. This
+is not the personal data of the individual.</p>
+<p>Many people choose to use the BIDS standard for naming the data. This
+is not always straightforward when running <code>dcm2niix</code> on its
+own, but there are other programs that sit on top of
+<code>dcm2niix</code> that can do BIDS compatible naming of file
+structure, along with generating other files needed for compliance with
+the BIDS standard:</p>
+<ul><li><a href="https://heudiconv.readthedocs.io/en/latest/" class="external-link">heudiconv</a></li>
+<li><a href="https://bidscoin.readthedocs.io/en/latest/" class="external-link">BIDScoin</a></li>
+<li><a href="https://aramislab.paris.inria.fr/clinica/docs/public/latest/" class="external-link">Clinica</a></li>
+</ul></div>
+</div>
+</div>
+</div>
+</div>
+</section><section><h2 class="section-heading" id="next-steps">Next steps<a class="anchor" aria-label="anchor" href="#next-steps"></a></h2>
+<hr class="half-width"><p>In the <a href="structural-mri.html">next episode on structural
 MRI</a>, we will learn how to align (register) the two images together
 to be able to look at the same point in the brain in both images.</p>
-</div>
 </section><section><h2 class="section-heading" id="additional-material">Additional material<a class="anchor" aria-label="anchor" href="#additional-material"></a></h2>
 <hr class="half-width"><p>For a more extensive tutorial on FSLeyes features, please refer to
 the <a href="https://open.win.ox.ac.uk/pages/fslcourse/practicals/intro1/index.html" class="external-link">FSL

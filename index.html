@@ -73,7 +73,7 @@
           <button class="nav-link dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-expanded="false">
             More <i data-feather="chevron-down"></i>
           </button>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown"><li><a class="dropdown-item" href="reference.html">Reference</a></li>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown"><li><a class="dropdown-item" href="virtual-machine.html">Working with the Virtual Machine</a></li>
           </ul></li>
       </ul></div>
     <!--
@@ -144,19 +144,12 @@
                   <div class="accordion accordion-flush" id="accordionFlushcurrent">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-headingcurrent">
-      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapsecurrent" aria-expanded="true" aria-controls="flush-collapsecurrent">
         <span class="visually-hidden">Current Chapter</span>
         <span class="current-chapter">
         Summary and Setup
         </span>
-      </button>
+      
     </div><!--/div.accordion-header-->
-
-    <div id="flush-collapsecurrent" class="accordion-collapse collapse show" aria-labelledby="flush-headingcurrent" data-bs-parent="#accordionFlushcurrent">
-      <div class="accordion-body">
-        <ul><li><a href="#connecting-to-your-virtual-machine">Connecting to your virtual machine</a></li>
-        </ul></div><!--/div.accordion-body-->
-    </div><!--/div.accordion-collapse-->
 
   </div><!--/div.accordion-item-->
 </div><!--/div.accordion-flush-->
@@ -237,7 +230,7 @@
                       <li>
                         <a href="profiles.html">Learner Profiles</a>
                       </li>
-                      <li><a href="reference.html">Reference</a></li>
+                      <li><a href="virtual-machine.html">Working with the Virtual Machine</a></li>
                     </ul></div>
                 </div>
               </div>
@@ -287,6 +280,11 @@ registration, and pre-processing steps for fMRI, DTI, and PET. The
 objective of the workshop is to ensure participants gain an in-depth
 appreciation of commonly used interpretive clinical and or research
 applications for each methodology.</p>
+<p>This workshop uses virtual machines in the cloud. For more
+information on using the virtual machine for this immersive, please
+visit the following page:</p>
+<p><a href="virtual-machine.html">Working with the Virtual
+Machine</a></p>
 <div class="section level3">
 <h3 id="target-audience">Target Audience<a class="anchor" aria-label="anchor" href="#target-audience"></a></h3>
 <p>This hands-on workshop can serve as a beginner or refresher course
@@ -393,45 +391,7 @@ any links that you are not going to use.
  --></div>
 
 
-      <section id="setup"><section><h2 class="section-heading" id="connecting-to-your-virtual-machine">Connecting to your virtual machine<a class="anchor" aria-label="anchor" href="#connecting-to-your-virtual-machine"></a></h2>
-<hr class="half-width"><p>This page will tell you how to access your personal virtual (VM) to
-run these lessons. The virtual machine is essentially a “computer within
-a computer”. For this workshop, we have created virtual machines that
-have all the necessary software to perform the lessons. Here are the
-requirements for AWS AppStream2.0 from the manufacturer’s website: Users
-can access AppStream 2.0 through an HTML5-capable web browser on a
-desktop computer such as a Windows, Mac, Chromebook, or Linux computer.
-HTML5-capable web browsers that can be used include the following:
-Google Chrome, Safari, Microsoft Edge. NOTE: We would recommend not
-using Mozilla Firefox, particularly on Mac OS X, as we have noticed some
-issues with it at previous workshops.</p>
-<div class="section level3">
-<h3 id="cloud-based-instructions">Cloud based instructions<a class="anchor" aria-label="anchor" href="#cloud-based-instructions"></a></h3>
-<p>If you have completed the pre-survey questionnaire, then you should
-have received two emails. These may be located in your spam email:</p>
-<ol style="list-style-type: decimal"><li>One should be from the email address <a href="mailto:no-reply@accounts.eu-west-2.amazonappstream.com" class="email">no-reply@accounts.eu-west-2.amazonappstream.com</a> with
-the title <em>Start accessing your apps using Amazon AppStream 2.0</em>.
-This will have the link to set your password and log in for the first
-time.</li>
-<li>A second email should come from the same email with the title
-<em>Amazon AppStream 2.0: New apps available</em>. <img src="fig/aic_appstream_email.png" alt="Appstream Email" class="figure"></li>
-<li>Click on the login link, and you should see the following page. <img src="fig/aic_appstream_login.png" alt="Appstream Login" height="400" class="figure"></li>
-<li>Click on the <strong>Desktop</strong> item. It will then launch a
-computer and you will be able to see the Desktop on the screen <img src="fig/aic_appstream_choose_desktop.png" alt="Appstream Choose Desktop" height="400" class="figure"></li>
-<li>You will see a status message that it is starting your machine.
-After that you should see a desktop of the computer you will be doing
-the lesson with. <img src="fig/aic_smri_desktop.png" alt="Appstream Desktop" class="figure"></li>
-<li>
-<strong>If you get an error message</strong> saying “Resources not
-available, please wait a few minutes, as there will be more virtual
-machines spinning up to match the demand.</li>
-<li>Look out for a message from your web browser asking you to allow the
-web page to access the clipboard. Please make sure to allow this, as it
-will be easier to cut and paste from these lessons into the VM.</li>
-</ol><p><strong>If you did not supply an email yet, please approach an
-instructor and we will setup your account</strong></p>
-</div>
-<div class="section level3">
+      <section id="setup"><div class="section level3">
 <h3 id="organizing-committee">Organizing Committee<a class="anchor" aria-label="anchor" href="#organizing-committee"></a></h3>
 <p>The following committee members have been developing and testing the
 content and will be on-hand to lead the sessions and assist
@@ -458,9 +418,16 @@ Innovation Scholars</a> (MR/V03863X/1)</p>
 Society to Advance Alzheimer’s Research and Treatment (ISTAART)</a> and
 the ISTAART Neuroimaging Professional Interest Area in terms of travel
 funding for the organizers.</p>
-<p>The data for this course comes from the <a href="https://www.oasis-brains.org/" class="external-link">Open Access Series of Imaging
+<p>Data for this course comes from: * <a href="https://www.oasis-brains.org/" class="external-link">Open Access Series of Imaging
 Studies</a>(OASIS) dataset. Many thanks to Pamela LaMontaigne and the
-OASIS team as Washington University for their support with the data.</p>
+OASIS team as Washington University for their support with the data. *
+<a href="https://wrap.wisc.edu/" class="external-link">Wisconsin Registry for Alzheimer’s
+Prevention</a>. Many thanks to the WRAP study teams and participants at
+the University of Wisconsin-Madison for their contributions. * Chris
+Rorden’s <a href="https://github.com/neurolabusc/dcm_validate" class="external-link">dcm_validate data
+set</a>. More information on this validation data set can be found in
+the <a href="https://www.nature.com/articles/s41597-025-05503-w" class="external-link">accompanying
+paper</a>.</p>
 <p>Special thanks to Christian Haselgrove (NITRC-CE), Courtney Waugh
 (Amazon), and Mark Watts (UCL) for their support in creating the
 infrastructure for this project.</p>
@@ -469,7 +436,9 @@ Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.
  -->
 </div>
-</section></section></main><nav class="bottom-pagination mx-md-4" aria-label="Next Chapter"><!-- content for small screens --><div class="d-block d-sm-block d-md-none">
+
+
+      </section></main><nav class="bottom-pagination mx-md-4" aria-label="Next Chapter"><!-- content for small screens --><div class="d-block d-sm-block d-md-none">
         <a class="chapter-link float-end" href="imaging-data-structure-and-formats.html">Next<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
       </div>
       <!-- content for large screens -->
