@@ -710,7 +710,6 @@ For more information about the atlases available please refer to the
 
 Quit FSLeyes when you have finished looking at the atlases.
 
-::::::::::::::::::::::challenge
 ### BONUS EXERCISE: Viewing different imaging modalities
 So far we have seen examples of MRI T1-weighted scans (T1w). In research as 
 well as in clinical setting, we acquire multiple imaging modalities from the 
@@ -726,9 +725,37 @@ ls
 Let's take two imaging modalities from a different participant: 
 `sub-OAS30003_T1w.nii.gz` and `sub-OAS30003_FLAIR.nii.gz`
 
-- *Do they have the same dimension?*
-- *Do they have the same resolution?*
+::::::::::::::::::::::challenge
+*Do they have the same dimension?*
 
+:::::::::::::::::::::: hint
+Use `fslhd` to get information on dimension and voxel size. 
+::::::::::::::::::::::::::
+
+:::::::::::::::::::::::: solution 
+**No**
+
+Using `fslhd`, we can see that the dimensions (`dim1`, `dim2`, and 
+`dim3`) of the T1 are 176 x 240 x 161 and the dimensions of the FLAIR 
+image are 256 x 256 x 35.
+::::::::::::::::::::::::
+::::::::::::::::::::::::
+
+::::::::::::::::::::::challenge
+*Do they have the same resolution?*
+
+:::::::::::::::::::::: hint
+Use `fslhd` to get information on dimension and voxel size. 
+::::::::::::::::::::::::::
+
+:::::::::::::::::::::::: solution 
+**No**
+
+From the same `fslhd` commands, the resolution can be found in 
+the fields `pixdim1`, `pixdim2`, and `pixdim3`. For the T1 the resolution is
+1.20 x 1.05 x 1.05 mm. For the FLAIR it is 0.859 x 0.859 x 5.00mm
+::::::::::::::::::::::::
+::::::::::::::::::::::::
 
 
 Now let's have a look at them in FSLeyes:
@@ -743,58 +770,65 @@ Show/hide images with the eye button
 or by double clicking on the image name in 
 the overlay list.
 
-- *Do they have the same orientation?*
-- *Which brain characteristics are more visible in the T1w and which are more visible on FLAIR?*
+::::::::::::::::::::::challenge
+*Do they have the same orientation?*
 
 :::::::::::::::::::::: hint
-- Use `fslhd` to get information on dimension and voxel size. 
-- Look at the location panel to help with information about orientation
+Look at the location panel to help with information about orientation
 ::::::::::::::::::::::::::
 
 :::::::::::::::::::::::: solution 
+**No** 
 
-*Do the T1 and the FLAIR have the same dimension?*
-    
-**No**-Using `fslhd`, we can see that the dimensions (`dim1`, `dim2`, and 
-`dim3`) of the T1 are 176 x 240 x 161 and the dimensions of the FLAIR 
-image are 256 x 256 x 35.
-
-*Do the T1 and the FLAIR have the same resolution?*
-
-**No**-From the same `fslhd` commands, the resolution can be found in 
-the fields `pixdim1`, `pixdim2`, and `pixdim3`. For the T1 the resolution is
-1.20 x 1.05 x 1.05 mm. For the FLAIR it is 0.859 x 0.859 x 5.00mm
-    
-*Do the T1 and the FLAIR have the same orientation?*
-
-**No** In the bottom right panel you should see the warning: 
+In the bottom right panel you should see the warning: 
 “Images have different orientations/fields of view”
 
-*What brain characteristics are more visible in the T1w and which are more 
-visible on FLAIR?*
+::::::::::::::::::::::::
+::::::::::::::::::::::::
 
-On T1w, grey and white matter are more easily distinguishable. On FLAIR, 
-brain lesions – white matter hyperintensities – are more clearly visible
+::::::::::::::::::::::challenge
+*Which brain characteristics are more visible in the T1w and which are more visible on FLAIR?*
+
+:::::::::::::::::::::: hint
+Look at the location panel to help with information about orientation
+::::::::::::::::::::::::::
+
+:::::::::::::::::::::::: solution 
+- On T1w, grey and white matter are more easily distinguishable. 
+- On FLAIR, brain lesions – white matter hyperintensities – are more clearly visible
   
 :::::::::::::::::::::::::::::::::
 :::::::::::::::::::::::::::::::::
 
-::::::::::::::::::::: challenge
 
 ### BONUS EXERCISE: DICOM to NIfTI
 
-As discussed earlier, if you have received medical imaging data from a hosptial it is likely in 
-DICOM format. However, most of the software you are likely to use wants medical images in a 
-more manageable format, typically NIfTI images. There are many ways to convert between the two,
-but probably the most widely used is [dcm2niix](https://www.nitrc.org/plugins/mwiki/index.php/dcm2nii:MainPage)).
+As discussed earlier, if you have received medical imaging data from a hospital,
+it is likely in DICOM format. However, most of the neuroimaging software 
+packages that you are likely to use will work with medical images in a 
+more manageable format, typically NIfTI images. There are many ways to convert 
+between the two, but probably the most widely used is 
+[dcm2niix](https://www.nitrc.org/plugins/mwiki/index.php/dcm2nii:MainPage)).
 
-You can find the sample data in `~/data/ImageDataVisualization/DICOM`. Let's first change into this directory
+You can find the sample data in `~/data/ImageDataVisualization/DICOM`. These
+example data sets come from Chris Rorden's 
+[dcm_validate data set](https://github.com/neurolabusc/dcm_validate). More
+information on this validation data set can be found in the 
+[accompanying paper](https://www.nature.com/articles/s41597-025-05503-w).
+
+First let's change into the following directory
 
 ```bash
 cd ~/data/ImageDataVisualization/DICOM
 ```
 
-If you list the contents, you will see a single folder called `Subject01`
+If you list the contents, you will see two separate subfolders:
+```bash
+ls
+```
+```output
+dcm_qa_xa30  dcm_qa_xa30i
+```
 
 Let's first make a directory for the Nifti output
 
@@ -802,42 +836,270 @@ Let's first make a directory for the Nifti output
 mkdir Nifti
 ```
 
-1. How do we know how to use this command?
-2. Construct a command to convert the images and put them in the directory `data/ImageDataVisualization/DICOM/Subject01/Nifti`
-3. Figure out what option to use to store a compressed gzipped-version of the NIfTI file.
-4. Try out some different options to make the name easier to manage.
-5. Look at the converted NIfTI images in `fsleyes`. What modalities are they?
+We will now use `dcm2niix` to convert these DICOM data sets to Nifti.
+
+::::::::::::::::::::challenge
+*How can we figure out how to use this command?*
 
 ::::::::::::::::::::: hint
 We covered how to get help for a command in an earlier section.
 :::::::::::::::::::::
 
 ::::::::::::::::::::: solution
-1. To get help, we use the -h option:
+To get help, we use the -h option:
 
-    ```bash
-    dcm2niix -h
-    ```
-2. The simplest command to do this is 
-   
-   ```bash
-   dcm2niix -o Nifti Subject01
-   ```
-3. To zip the file, we use the -z function:
-   
-   ```bash
-   dcm2niix -z y -o Nifti Subject01
-   ```
-4. To change the naming structure, we use the -f function. How you name them 
-tends to be your personal choice, and many people choose to use the BIDS
-standard for naming the data. 
-   
-   ```bash
-   dcm2niix -f %i_%s_%d -z y -o Nifti Subject01
-   ```
-:::::::::::::::::::::
+```bash
+dcm2niix -h
+```
+```output
+Chris Rorden's dcm2niiX version v1.0.20240202  GCC12.3.0 x86-64 (64-bit Linux)
+usage: dcm2niix [options] <in_folder>
+ Options :
+  -1..-9 : gz compression level (1=fastest..9=smallest, default 6)
+  -a : adjacent DICOMs (images from same series always in same folder) for faster conversion (n/y, default n)
+  -b : BIDS sidecar (y/n/o [o=only: no NIfTI], default y)
+   -ba : anonymize BIDS (y/n, default y)
+  -c : comment stored in NIfTI aux_file (up to 24 characters e.g. '-c VIP', empty to anonymize e.g. 0020,4000 e.g. '-c ""')
+  -d : directory search depth. Convert DICOMs in sub-folders of in_folder? (0..9, default 5)
+  -e : export as NRRD (y) or MGH (o) or JSON/JNIfTI (j) or BJNIfTI (b) instead of NIfTI (y/n/o/j/b, default n)
+  -f : filename (%a=antenna (coil) name, %b=basename, %c=comments, %d=description, %e=echo number, %f=folder name, %g=accession number, %i=ID of patient, %j=seriesInstanceUID, %k=studyInstanceUID, %m=manufacturer, %n=name of patient, %o=mediaObjectInstanceUID, %p=protocol, %r=instance number, %s=series number, %t=time, %u=acquisition number, %v=vendor, %x=study ID; %z=sequence name; default '%f_%p_%t_%s')
+  -g : generate defaults file (y/n/o/i [o=only: reset and write defaults; i=ignore: reset defaults], default n)
+  -h : show help
+  -i : ignore derived, localizer and 2D images (y/n, default n)
+  -l : losslessly scale 16-bit integers to use dynamic range (y/n/o [yes=scale, no=no, but uint16->int16, o=original], default o)
+  -m : merge 2D slices from same series regardless of echo, exposure, etc. (n/y or 0/1/2, default 2) [no, yes, auto]
+  -n : only convert this series CRC number - can be used up to 16 times (default convert all)
+  -o : output directory (omit to save to input folder)
+  -p : Philips precise float (not display) scaling (y/n, default y)
+  -q : only search directory for DICOMs (y/l/n, default y) [y=show number of DICOMs found, l=additionally list DICOMs found, n=no]
+  -r : rename instead of convert DICOMs (y/n, default n)
+  -s : single file mode, do not convert other images in folder (y/n, default n)
+  -u : up-to-date check
+  -v : verbose (n/y or 0/1/2, default 0) [no, yes, logorrheic]
+  -w : write behavior for name conflicts (0,1,2, default 2: 0=skip duplicates, 1=overwrite, 2=add suffix)
+  -x : crop 3D acquisitions (y/n/i, default n, use 'i'gnore to neither crop nor rotate 3D acquistions)
+  -z : gz compress images (y/o/i/n/3, default n) [y=pigz, o=optimal pigz, i=internal:miniz, n=no, 3=no,3D]
+  --big-endian : byte order (y/n/o, default o) [y=big-end, n=little-end, o=optimal/native]
+  --progress : Slicer format progress information (y/n, default n)
+  --ignore_trigger_times : disregard values in 0018,1060 and 0020,9153
+  --terse : omit filename post-fixes (can cause overwrites)
+  --version : report version
+  --xml : Slicer format features
+ Defaults file : /home/as2-streaming-user/.dcm2nii.ini
+ Examples :
+  dcm2niix /Users/chris/dir
+  dcm2niix -c "my comment" /Users/chris/dir
+  dcm2niix -o /users/cr/outdir/ -z y ~/dicomdir
+  dcm2niix -f %p_%s -b y -ba n ~/dicomdir
+  dcm2niix -f mystudy%s ~/dicomdir
+  dcm2niix -o "~/dir with spaces/dir" ~/dicomdir
+Example output filename: 'myFolder_MPRAGE_19770703150928_1.nii'
+```
+
+::::::::::::::::::::::
+::::::::::::::::::::::
+
+::::::::::::::::::::challenge
+*Choose either the* `dcm_qa_xa30` *or the* `dcm_qa_xa30i` *directory and*
+*construct a command to convert the images, storing the output in the directory*
+`~/data/ImageDataVisualization/DICOM/Nifti`
+
+::::::::::::::::::::: hint
+Look through the help output and determine which options that you will need.
 :::::::::::::::::::::
 
+::::::::::::::::::::: solution
+The simplest command to do this is below and the expected output follows
+   
+ ```bash
+dcm2niix -o Nifti dcm_qa_xa30
+```
+```output
+Chris Rorden's dcm2niiX version v1.0.20240202  GCC12.3.0 x86-64 (64-bit Linux)
+Found 95 DICOM file(s)
+Skipping non-image DICOM: dcm_qa_xa30/In/15_DWI_dir80_PA/15001_1.3.12.2.1107.5.2.43.67093.2022071112123487825308836_Raw.dcm
+Skipping non-image DICOM: dcm_qa_xa30/In/23_DWI_dir80_AP/23001_1.3.12.2.1107.5.2.43.67093.2022071112140679340412461_Raw.dcm
+Convert 21 DICOM as Nifti/dcm_qa_xa30_DWI_dir80_AP_20220711120427_17 (72x72x39x21)
+Convert 1 DICOM as Nifti/dcm_qa_xa30_DWI_dir80_PA_20220711120427_16 (72x72x39x1)
+Convert 1 DICOM as Nifti/dcm_qa_xa30_DWI_dir80_AP_20220711120427_22 (72x72x39x1)
+Convert 1 DICOM as Nifti/dcm_qa_xa30_gre_field_mapping_20220711120427_9_e2_ph (64x64x33x1)
+Convert 1 DICOM as Nifti/dcm_qa_xa30_asl_2d_tra_20220711120427_28 (64x64x12x1)
+Convert 1 DICOM as Nifti/dcm_qa_xa30_DWI_dir80_PA_20220711120427_14 (72x72x39x1)
+Convert 21 DICOM as Nifti/dcm_qa_xa30_DWI_dir80_PA_20220711120427_10 (72x72x39x21)
+Convert 20 DICOM as Nifti/dcm_qa_xa30_func-bold_task-fa_run-1_20220711120427_7 (64x64x33x20)
+Convert 1 DICOM as Nifti/dcm_qa_xa30_anat-T1w_acq-tfl_20220711120427_5 (128x128x96x1)
+Convert 1 DICOM as Nifti/dcm_qa_xa30_DWI_dir80_PA_20220711120427_13 (72x72x39x1)
+Convert 1 DICOM as Nifti/dcm_qa_xa30_DWI_dir80_PA_20220711120427_12 (72x72x39x1)
+Convert 1 DICOM as Nifti/dcm_qa_xa30_DWI_dir80_AP_20220711120427_19 (72x72x39x1)
+Slices not stacked: echo varies (TE 10, 12.46; echo 1, 2). Use 'merge 2D slices' option to force stacking
+Convert 1 DICOM as Nifti/dcm_qa_xa30_gre_field_mapping_20220711120427_8_e1 (64x64x33x1)
+Convert 1 DICOM as Nifti/dcm_qa_xa30_gre_field_mapping_20220711120427_8_e2 (64x64x33x1)
+Convert 7 DICOM as Nifti/dcm_qa_xa30_asl_2d_tra_20220711120427_25 (64x64x12x7)
+Convert 1 DICOM as Nifti/dcm_qa_xa30_anat-T1w_acq-tfl_20220711120427_6 (128x128x96x1)
+Convert 1 DICOM as Nifti/dcm_qa_xa30_DWI_dir80_AP_20220711120427_24 (72x72x39x1)
+Convert 1 DICOM as Nifti/dcm_qa_xa30_DWI_dir80_PA_20220711120427_11 (72x72x39x1)
+Convert 1 DICOM as Nifti/dcm_qa_xa30_asl_2d_tra_20220711120427_27 (64x64x12x1)
+Convert 1 DICOM as Nifti/dcm_qa_xa30_DWI_dir80_AP_20220711120427_20 (72x72x39x1)
+Convert 1 DICOM as Nifti/dcm_qa_xa30_DWI_dir80_AP_20220711120427_21 (72x72x39x1)
+Conversion required 0.901295 seconds (0.382864 for core code).
+```
+::::::::::::::::::::::
+::::::::::::::::::::::
+
+When we look at the Nifti folders' contents, we see the following output:
+```bash
+ls Nifti/
+```
+::::::::::::::: spoiler
+```output
+dcm_qa_xa30_anat-T1w_acq-tfl_20220711120427_5.json
+dcm_qa_xa30_anat-T1w_acq-tfl_20220711120427_5.nii
+dcm_qa_xa30_anat-T1w_acq-tfl_20220711120427_6.json
+dcm_qa_xa30_anat-T1w_acq-tfl_20220711120427_6.nii
+dcm_qa_xa30_asl_2d_tra_20220711120427_25.json
+dcm_qa_xa30_asl_2d_tra_20220711120427_25.nii
+dcm_qa_xa30_asl_2d_tra_20220711120427_27.json
+dcm_qa_xa30_asl_2d_tra_20220711120427_27.nii
+dcm_qa_xa30_asl_2d_tra_20220711120427_28.json
+dcm_qa_xa30_asl_2d_tra_20220711120427_28.nii
+dcm_qa_xa30_DWI_dir80_AP_20220711120427_17.bval
+dcm_qa_xa30_DWI_dir80_AP_20220711120427_17.bvec
+dcm_qa_xa30_DWI_dir80_AP_20220711120427_17.json
+dcm_qa_xa30_DWI_dir80_AP_20220711120427_17.nii
+dcm_qa_xa30_DWI_dir80_AP_20220711120427_19.json
+dcm_qa_xa30_DWI_dir80_AP_20220711120427_19.nii
+dcm_qa_xa30_DWI_dir80_AP_20220711120427_20.json
+dcm_qa_xa30_DWI_dir80_AP_20220711120427_20.nii
+dcm_qa_xa30_DWI_dir80_AP_20220711120427_21.json
+dcm_qa_xa30_DWI_dir80_AP_20220711120427_21.nii
+dcm_qa_xa30_DWI_dir80_AP_20220711120427_22.json
+dcm_qa_xa30_DWI_dir80_AP_20220711120427_22.nii
+dcm_qa_xa30_DWI_dir80_AP_20220711120427_24.json
+dcm_qa_xa30_DWI_dir80_AP_20220711120427_24.nii
+dcm_qa_xa30_DWI_dir80_PA_20220711120427_10.bval
+dcm_qa_xa30_DWI_dir80_PA_20220711120427_10.bvec
+dcm_qa_xa30_DWI_dir80_PA_20220711120427_10.json
+dcm_qa_xa30_DWI_dir80_PA_20220711120427_10.nii
+dcm_qa_xa30_DWI_dir80_PA_20220711120427_11.json
+dcm_qa_xa30_DWI_dir80_PA_20220711120427_11.nii
+dcm_qa_xa30_DWI_dir80_PA_20220711120427_12.json
+dcm_qa_xa30_DWI_dir80_PA_20220711120427_12.nii
+dcm_qa_xa30_DWI_dir80_PA_20220711120427_13.json
+dcm_qa_xa30_DWI_dir80_PA_20220711120427_13.nii
+dcm_qa_xa30_DWI_dir80_PA_20220711120427_14.json
+dcm_qa_xa30_DWI_dir80_PA_20220711120427_14.nii
+dcm_qa_xa30_DWI_dir80_PA_20220711120427_16.json
+dcm_qa_xa30_DWI_dir80_PA_20220711120427_16.nii
+dcm_qa_xa30_func-bold_task-fa_run-1_20220711120427_7.json
+dcm_qa_xa30_func-bold_task-fa_run-1_20220711120427_7.nii
+dcm_qa_xa30_gre_field_mapping_20220711120427_8_e1.json
+dcm_qa_xa30_gre_field_mapping_20220711120427_8_e1.nii
+dcm_qa_xa30_gre_field_mapping_20220711120427_8_e2.json
+dcm_qa_xa30_gre_field_mapping_20220711120427_8_e2.nii
+dcm_qa_xa30_gre_field_mapping_20220711120427_9_e2_ph.json
+dcm_qa_xa30_gre_field_mapping_20220711120427_9_e2_ph.nii
+```
+
+::::::::::::::::::::::::
+
+You will see a files that have the same name, but with different extensions:
+
+- `.nii` extension: These are the NIfTI files that are the main output
+- `.json` extension: These are called "sidecars". They hold additional metadata about the image and are needed for compatibility with BIDS
+- `.bval` and `.bvec` extensions: These are additional files needed to store gradient information for [diffusion imaging](diffusion-weighted-imaging.Rmd)
+
+
+::::::::::::::::::::challenge
+*Figure out what option to use to store a compressed gzipped-version of the NIfTI file.*
+
+::::::::::::::::::::: hint
+Look through the help output and find the option that deals with "gz compress images"
+:::::::::::::::::::::
+
+::::::::::::::::::::: solution
+Here we add the `-z y` option to the command:
+   
+```bash
+dcm2niix -z y -o Nifti dcm_qa_xa30
+```
+
+In the previous command, the Nifti files produced had only the `.nii` extension 
+(for example: `dcm_qa_xa30_anat-T1w_acq-tfl_20220711120427_5.nii`). Now these
+NIfTI files have a `.gz` at the end --> `dcm_qa_xa30_anat-T1w_acq-tfl_20220711120427_5.nii.gz`
+
+::::::::::::::::::::::
+::::::::::::::::::::::
+
+::::::::::::::::::::challenge
+*Try out some different options to make the name easier to manage.*
+
+::::::::::::::::::::: hint
+Look through the help output and find the option that deals with filenaming
+:::::::::::::::::::::
+
+::::::::::::::::::::: solution
+To change the naming structure, we use the -f function. Here is a refresher of
+the different elements from DICOM tags that you can use to help effectively
+name your file:
+```
+%a=antenna (coil) name
+%b=basename
+%c=comments
+%d=description
+%e=echo number
+%f=folder name
+%g=accession number
+%i=ID of patient
+%j=seriesInstanceUID
+%k=studyInstanceUID
+%m=manufacturer
+%n=name of patient
+%o=mediaObjectInstanceUID
+%p=protocol
+%r=instance number
+%s=series number
+%t=time
+%u=acquisition number
+%v=vendor
+%x=study ID
+%z=sequence name
+```
+
+The `dcm2niix` default is `%f_%p_%t_%s`. In our example:
+
+- `%f` is replaced by the folder name `dcm_qa_xa30`
+- `%p` is replaced by the protocol `anat-T1w_acq-tfl`
+- `%t` is replaced by the date and time of the acquisition `20220711120427`
+- `%s` is replaced by the series number, `5`
+
+
+How you name them  tends to be your personal choice, here is one approach
+   
+```bash
+dcm2niix -f %i_%s_%d -z y -o Nifti dcm_qa_xa30
+```
+
+Here the file that was originally named 
+`dcm_qa_xa30_anat-T1w_acq-tfl_20220711120427_5.nii` is now named
+`12343@hucheng_5_anat-T1w_acq-tfl.nii`
+
+**NOTE** Hucheng is the name of the individual who acquiring the data and provided
+the scans for the valdiation set. This is not the personal data of the individual.
+
+Many people choose to use the BIDS standard for naming the data. This is not
+always straightforward when running `dcm2niix` on its own, but there are 
+other programs that sit on top of `dcm2niix` that can do BIDS compatible 
+naming of file structure, along with generating other files needed for 
+compliance with the BIDS standard:
+
+- [heudiconv](https://heudiconv.readthedocs.io/en/latest/) 
+- [BIDScoin](https://bidscoin.readthedocs.io/en/latest/)
+- [Clinica](https://aramislab.paris.inria.fr/clinica/docs/public/latest/)
+
+::::::::::::::::::::::
+::::::::::::::::::::::
+
+## Next steps
 In the [next episode on structural MRI](structural-mri.Rmd), we will learn how 
 to align (register) the two images together to be able to look at the same 
 point in the brain in both images.

@@ -74,6 +74,8 @@ episodes:
 
 # Information for Learners
 learners:
+- setup.md
+- virtual-machine.md
 
 # Information for Instructors
 instructors:
