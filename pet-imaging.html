@@ -179,7 +179,7 @@
       </button>
     </div><!--/div.accordion-header-->
 
-    <div id="flush-collapsecurrent" class="accordion-collapse collapse show" aria-labelledby="flush-headingcurrent" data-bs-parent="#accordionFlushcurrent">
+    <div id="flush-collapsecurrent" class="accordion-collapse collapse show" data-bs-parent="#accordionFlushcurrent">
       <div class="accordion-body">
         <ul><li><a href="#introduction">Introduction</a></li>
 <li><a href="#gaining-familiarity-with-4d-pet-data">Gaining familiarity with 4D PET data</a></li>
@@ -282,7 +282,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Processing and analysing PET brain images</h1>
-        <p>Last updated on 2025-12-02 |
+        <p>Last updated on 2026-04-28 |
 
         <a href="https://github.com/davecash75/aaic-neuroimaging-workshop/edit/main/episodes/pet-imaging.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -363,7 +363,7 @@ following location:</p>
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="bu">cd</span> /home/as2-streaming-user/data/PETImaging/UnprocessedData</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" tabindex="-1" aria-label="code-block-1-1"></a><span class="bu">cd</span> /home/as2-streaming-user/data/PETImaging/UnprocessedData</span></code></pre>
 </div>
 </li>
 </ol></div>
@@ -375,7 +375,7 @@ type the following into the terminal:</p>
 <div class="codewrapper sourceCode" id="cb2">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="ex">gedit</span> sub001_pib.json</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" tabindex="-1" aria-label="code-block-2-1"></a><span class="ex">gedit</span> sub001_pib.json</span></code></pre>
 </div>
 <div id="accordionHint1" class="accordion challenge-accordion accordion-flush">
 <div class="accordion-item">
@@ -421,7 +421,7 @@ because the scan started with tracer injection.</p>
 <div class="codewrapper sourceCode" id="cb3">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="bu">cd</span> /home/as2-streaming-user/data/PET_Imaging/UnprocessedData</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" tabindex="-1" aria-label="code-block-3-1"></a><span class="bu">cd</span> /home/as2-streaming-user/data/PET_Imaging/UnprocessedData</span></code></pre>
 </div>
 </li>
 <li>
@@ -429,7 +429,7 @@ because the scan started with tracer injection.</p>
 <div class="codewrapper sourceCode" id="cb4">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="ex">fsleyes</span> <span class="at">-ms</span> sub001_pib.nii <span class="kw">&amp;</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" tabindex="-1" aria-label="code-block-4-1"></a><span class="ex">fsleyes</span> <span class="at">-ms</span> sub001_pib.nii <span class="kw">&amp;</span></span></code></pre>
 </div>
 <p>THe <code>-ms</code> option provides better viewing of 4D image data
 on this VM. You should add this whenever working with dynamic PET data,
@@ -517,7 +517,7 @@ the last 20 minutes of counts.</p>
 <div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">MATLAB<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode matlab" tabindex="0"><code class="sourceCode matlab"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a>(<span class="va">i1</span> <span class="op">+</span> <span class="va">i2</span> <span class="op">+</span> <span class="va">i3</span> <span class="op">+</span><span class="va">i4</span>)<span class="op">/</span><span class="fl">4</span></span></code></pre>
+<pre class="sourceCode matlab" tabindex="0"><code class="sourceCode matlab"><span id="cb5-1"><a href="#cb5-1" tabindex="-1" aria-label="code-block-5-1"></a>(<span class="va">i1</span> <span class="op">+</span> <span class="va">i2</span> <span class="op">+</span> <span class="va">i3</span> <span class="op">+</span><span class="va">i4</span>)<span class="op">/</span><span class="fl">4</span></span></code></pre>
 </div>
 <p>Note that taking the average of these frames is equivalent to summing
 all of the detected counts across the frames and dividing by the total
@@ -567,7 +567,7 @@ frame durations between the first five and last two frames of the first
 <div class="codewrapper sourceCode" id="cb6">
 <h3 class="code-label">MATLAB<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode matlab" tabindex="0"><code class="sourceCode matlab"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a>(<span class="va">i1</span><span class="op">*</span><span class="fl">2</span> <span class="op">+</span> <span class="va">i2</span><span class="op">*</span><span class="fl">2</span> <span class="op">+</span> <span class="va">i3</span><span class="op">*</span><span class="fl">2</span> <span class="op">+</span> <span class="va">i4</span><span class="op">*</span><span class="fl">2</span> <span class="op">+</span><span class="va">i5</span><span class="op">*</span><span class="fl">2</span> <span class="op">+</span> <span class="va">i6</span><span class="op">*</span><span class="fl">5</span> <span class="op">+</span> <span class="va">i7</span><span class="op">*</span><span class="fl">5</span>) <span class="op">/</span> <span class="fl">20</span></span></code></pre>
+<pre class="sourceCode matlab" tabindex="0"><code class="sourceCode matlab"><span id="cb6-1"><a href="#cb6-1" tabindex="-1" aria-label="code-block-6-1"></a>(<span class="va">i1</span><span class="op">*</span><span class="fl">2</span> <span class="op">+</span> <span class="va">i2</span><span class="op">*</span><span class="fl">2</span> <span class="op">+</span> <span class="va">i3</span><span class="op">*</span><span class="fl">2</span> <span class="op">+</span> <span class="va">i4</span><span class="op">*</span><span class="fl">2</span> <span class="op">+</span><span class="va">i5</span><span class="op">*</span><span class="fl">2</span> <span class="op">+</span> <span class="va">i6</span><span class="op">*</span><span class="fl">5</span> <span class="op">+</span> <span class="va">i7</span><span class="op">*</span><span class="fl">5</span>) <span class="op">/</span> <span class="fl">20</span></span></code></pre>
 </div>
 </li>
 <li><p>Name this file <code>sub001_pib_SUM0-20min.nii</code></p></li>
@@ -650,7 +650,7 @@ working directory.</p>
 <div class="codewrapper sourceCode" id="cb7">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="fu">mkdir</span> safe</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" tabindex="-1" aria-label="code-block-7-1"></a><span class="fu">mkdir</span> safe</span></code></pre>
 </div>
 </li>
 <li>
@@ -660,7 +660,7 @@ command in the terminal.</p>
 <div class="codewrapper sourceCode" id="cb8">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="fu">cp</span> ssub001_pib_SUM50-70min.nii safe/ssub001_pib_SUM50-70min.nii</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" tabindex="-1" aria-label="code-block-8-1"></a><span class="fu">cp</span> ssub001_pib_SUM50-70min.nii safe/ssub001_pib_SUM50-70min.nii</span></code></pre>
 </div>
 </li>
 </ol></li>
@@ -770,7 +770,7 @@ the cerebellum mask using fslstats</p>
 <div class="codewrapper sourceCode" id="cb9">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a><span class="ex">fslstats</span> rssub001_pib_SUM50-70min.nii <span class="at">-k</span> rsub001_cblm_mask.nii <span class="at">-M</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" tabindex="-1" aria-label="code-block-9-1"></a><span class="ex">fslstats</span> rssub001_pib_SUM50-70min.nii <span class="at">-k</span> rsub001_cblm_mask.nii <span class="at">-M</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -786,7 +786,7 @@ mean activity concentration output by <code>fslstats</code></p>
 <div class="codewrapper sourceCode" id="cb11">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a><span class="ex">fslmaths</span> rssub001_pib_SUM50-70min.nii <span class="at">-div</span> {ROI mean} rssub001_pib_SUVR50-70min.nii</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" tabindex="-1" aria-label="code-block-11-1"></a><span class="ex">fslmaths</span> rssub001_pib_SUM50-70min.nii <span class="at">-div</span> {ROI mean} rssub001_pib_SUVR50-70min.nii</span></code></pre>
 </div>
 <p>In this command replace <code>{ROI mean}</code> with the value that
 you got in the <code>fslstats</code> command.</p>
@@ -964,7 +964,7 @@ are stored in the .json file.</p>
 <div class="codewrapper sourceCode" id="cb12">
 <h3 class="code-label">MATLAB<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode matlab" tabindex="0"><code class="sourceCode matlab"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a>(<span class="va">i1</span><span class="op">*</span><span class="fl">2</span> <span class="op">+</span><span class="va">i3</span><span class="op">*</span><span class="fl">2</span> <span class="op">+</span><span class="va">i4</span><span class="op">*</span><span class="fl">2</span> <span class="op">+</span><span class="va">i5</span><span class="op">*</span><span class="fl">2</span> <span class="op">+</span><span class="va">i6</span><span class="op">*</span><span class="fl">5</span> <span class="op">+</span><span class="va">i7</span><span class="op">*</span><span class="fl">5</span> <span class="op">+</span><span class="va">i8</span><span class="op">*</span><span class="fl">5</span> <span class="op">+</span><span class="va">i9</span><span class="op">*</span><span class="fl">5</span> <span class="op">+</span><span class="va">i10</span><span class="op">*</span><span class="fl">5</span> <span class="op">+</span><span class="va">i11</span><span class="op">*</span><span class="fl">5</span> <span class="op">+</span><span class="va">i12</span><span class="op">*</span><span class="fl">5</span> <span class="op">+</span><span class="va">i13</span><span class="op">*</span><span class="fl">5</span> <span class="op">+</span><span class="va">i14</span><span class="op">*</span><span class="fl">5</span> <span class="op">+</span><span class="va">i15</span><span class="op">*</span><span class="fl">5</span> <span class="op">+</span><span class="va">i16</span><span class="op">*</span><span class="fl">5</span> <span class="op">+</span><span class="va">i17</span><span class="op">*</span><span class="fl">5</span>)<span class="op">/</span><span class="fl">70</span></span></code></pre>
+<pre class="sourceCode matlab" tabindex="0"><code class="sourceCode matlab"><span id="cb12-1"><a href="#cb12-1" tabindex="-1" aria-label="code-block-12-1"></a>(<span class="va">i1</span><span class="op">*</span><span class="fl">2</span> <span class="op">+</span><span class="va">i3</span><span class="op">*</span><span class="fl">2</span> <span class="op">+</span><span class="va">i4</span><span class="op">*</span><span class="fl">2</span> <span class="op">+</span><span class="va">i5</span><span class="op">*</span><span class="fl">2</span> <span class="op">+</span><span class="va">i6</span><span class="op">*</span><span class="fl">5</span> <span class="op">+</span><span class="va">i7</span><span class="op">*</span><span class="fl">5</span> <span class="op">+</span><span class="va">i8</span><span class="op">*</span><span class="fl">5</span> <span class="op">+</span><span class="va">i9</span><span class="op">*</span><span class="fl">5</span> <span class="op">+</span><span class="va">i10</span><span class="op">*</span><span class="fl">5</span> <span class="op">+</span><span class="va">i11</span><span class="op">*</span><span class="fl">5</span> <span class="op">+</span><span class="va">i12</span><span class="op">*</span><span class="fl">5</span> <span class="op">+</span><span class="va">i13</span><span class="op">*</span><span class="fl">5</span> <span class="op">+</span><span class="va">i14</span><span class="op">*</span><span class="fl">5</span> <span class="op">+</span><span class="va">i15</span><span class="op">*</span><span class="fl">5</span> <span class="op">+</span><span class="va">i16</span><span class="op">*</span><span class="fl">5</span> <span class="op">+</span><span class="va">i17</span><span class="op">*</span><span class="fl">5</span>)<span class="op">/</span><span class="fl">70</span></span></code></pre>
 </div>
 </li>
 <li><p>Use FLOAT32 for the Data Type</p></li>
@@ -1151,14 +1151,14 @@ any links that you are not going to use.
 	
         | <a href="https://github.com/davecash75/aaic-neuroimaging-workshop/blob/main/CONTRIBUTING.md" class="external-link">Contributing</a>
         | <a href="https://github.com/davecash75/aaic-neuroimaging-workshop/" class="external-link">Source</a></p>
-				<p><a href="https://github.com/davecash75/aaic-neuroimaging-workshop/blob/main/CITATION.cff" class="external-link">Cite</a> | <a href="mailto:d.cash@ucl.ac.uk">Contact</a> | <a href="https://carpentries.org/about/" class="external-link">About</a></p>
+				<p><a href="https://github.com/davecash75/aaic-neuroimaging-workshop/blob/main/" class="external-link">Cite</a> | <a href="mailto:d.cash@ucl.ac.uk">Contact</a> | <a href="https://carpentries.org/about/" class="external-link">About</a></p>
 			</div>
 			<div class="col-md-6">
 
         <p>Materials licensed under <a href="LICENSE.html">CC-BY 4.0</a> by the authors</p>
 
         <p>Template licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/" class="external-link">CC-BY 4.0</a> by <a href="https://carpentries.org/" class="external-link">The Carpentries</a></p>
-        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.17.1" class="external-link">sandpaper (0.17.1)</a>, <a href="https://github.com/carpentries/pegboard/tree/0.7.9" class="external-link">pegboard (0.7.9)</a>, and <a href="https://github.com/HealthBioscienceIDEAS/varnish/tree/IDEAS" class="external-link">varnish (1.0.3.9000)</a></p>
+        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.20.1" class="external-link">sandpaper (0.20.1)</a>, <a href="https://github.com/carpentries/pegboard/tree/0.7.9" class="external-link">pegboard (0.7.9)</a>, and <a href="https://github.com/HealthBioscienceIDEAS/varnish/tree/IDEAS" class="external-link">varnish (1.0.3.9000)</a></p>
 			</div>
 		</footer></div> <!-- / div.container -->
 	<div id="to-top">
@@ -1180,8 +1180,8 @@ any links that you are not going to use.
   "url": "https://davecash75.github.io/aaic-neuroimaging-workshop/pet-imaging.html",
   "identifier": "https://davecash75.github.io/aaic-neuroimaging-workshop/pet-imaging.html",
   "dateCreated": "2025-06-30",
-  "dateModified": "2025-12-02",
-  "datePublished": "2025-12-02"
+  "dateModified": "2026-04-28",
+  "datePublished": "2026-04-28"
 }
 
   </script><script>
