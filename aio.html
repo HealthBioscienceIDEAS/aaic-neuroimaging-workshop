@@ -310,7 +310,7 @@
         
 <section id="aio-imaging-data-structure-and-formats"><p>Content from <a href="imaging-data-structure-and-formats.html">Imaging Data: Structure And Formats</a></p>
 <hr>
-<p>Last updated on 2026-04-28 |
+<p>Last updated on 2026-05-05 |
 
         <a href="https://github.com/davecash75/aaic-neuroimaging-workshop/edit/main/episodes/imaging-data-structure-and-formats.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -750,40 +750,40 @@ pipeline:</p>
 <col width="33%">
 <col width="50%">
 </colgroup>
-<thead><tr class="header">
+<thead><tr>
 <th>Step</th>
 <th>Aim</th>
 <th>Challenges and considerations</th>
 </tr></thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td><strong>1. Data Acquisition</strong></td>
 <td>Obtain good quality and consistent data</td>
 <td>Trade offs often necessary (e.g. time vs resolution). Optimize
 protocol for your research aim. We will use already acquired data from
 OASIS.</td>
 </tr>
-<tr class="even">
+<tr>
 <td><strong>2. Data preprocessing</strong></td>
 <td>Reduce noise and prepare data for further analysis</td>
 <td>Some steps are common across modalities (e.g. brain extraction,
 registration), others are modality-specific (e.g. motion correction,
 distortion correction). Requires careful checking.</td>
 </tr>
-<tr class="odd">
+<tr>
 <td><strong>3. Single-subject analysis</strong></td>
 <td>Obtain measure of interest for each subject (often an image)</td>
 <td>Modality-specific. Examples of single-subject outputs are
 tissue-type segmentation maps, fractional anisotropy map.</td>
 </tr>
-<tr class="even">
+<tr>
 <td><strong>4. Group-level analysis</strong></td>
 <td>Compare single-subject results across groups</td>
 <td>Common step across modalities. Usually happens in standard space
 (i.e. after images from all subjects have been aligned to a reference
 image, called <em>template</em>).</td>
 </tr>
-<tr class="odd">
+<tr>
 <td><strong>5. Statistical inference</strong></td>
 <td>Test reliability of results and generalizability to the
 population</td>
@@ -1876,7 +1876,7 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-structural-mri"><p>Content from <a href="structural-mri.html">Structural MRI: Bias Correction, Segmentation and Image Registration</a></p>
 <hr>
-<p>Last updated on 2026-04-28 |
+<p>Last updated on 2026-05-05 |
 
         <a href="https://github.com/davecash75/aaic-neuroimaging-workshop/edit/main/episodes/structural-mri.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -2056,7 +2056,7 @@ finished.</p></li>
 <button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler1" aria-expanded="false" aria-controls="collapseSpoiler1">
   <h3 class="accordion-header" id="headingSpoiler1">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div> Reproducing your work </h3>
 </button>
-<div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
+<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
 <div class="accordion-body">
 <p>When you are using these workflows for your actual research, we
 <strong>highly recommend</strong> that you save the SPM pipelines so
@@ -2174,7 +2174,7 @@ and CSF in the T1 weighted image correctly?</em></p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>You should have an output that looks something like this. <img src="fig/aic_smri_tissue_seg_check.png" alt="Tissue segmentation check" class="figure"></p>
 </div>
@@ -2366,7 +2366,7 @@ more structural imaging data, please try the exercises below.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb12">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2572,7 +2572,7 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-pet-imaging"><p>Content from <a href="pet-imaging.html">Processing and analysing PET brain images</a></p>
 <hr>
-<p>Last updated on 2026-04-28 |
+<p>Last updated on 2026-05-05 |
 
         <a href="https://github.com/davecash75/aaic-neuroimaging-workshop/edit/main/episodes/pet-imaging.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -3506,7 +3506,7 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-diffusion-weighted-imaging"><p>Content from <a href="diffusion-weighted-imaging.html">Diffusion-weighted imaging (DWI)</a></p>
 <hr>
-<p>Last updated on 2026-04-28 |
+<p>Last updated on 2026-05-05 |
 
         <a href="https://github.com/davecash75/aaic-neuroimaging-workshop/edit/main/episodes/diffusion-weighted-imaging.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -4101,7 +4101,7 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-functional-mri"><p>Content from <a href="functional-mri.html">Functional Magnetic Resonance Imaging (fMRI)</a></p>
 <hr>
-<p>Last updated on 2026-04-28 |
+<p>Last updated on 2026-05-05 |
 
         <a href="https://github.com/davecash75/aaic-neuroimaging-workshop/edit/main/episodes/functional-mri.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -4517,7 +4517,7 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-command-line"><p>Content from <a href="command-line.html">Extra: Using the Command Line</a></p>
 <hr>
-<p>Last updated on 2026-04-28 |
+<p>Last updated on 2026-05-05 |
 
         <a href="https://github.com/davecash75/aaic-neuroimaging-workshop/edit/main/episodes/command-line.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -4879,7 +4879,7 @@ files.</p>
   That just flew off the screen!
   </h3>
 </button>
-<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
+<div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
 <div class="accordion-body">
 <p>Using <code>cat</code> on a large text file can end up looking
 impressive as text swarms all over your terminal, but it can be hard to
@@ -5194,75 +5194,75 @@ screen to the input of the calculator command <code>bc</code>.</p>
 <col width="25%">
 <col width="25%">
 </colgroup>
-<thead><tr class="header">
+<thead><tr>
 <th>Command</th>
 <th>Name</th>
 <th>Function</th>
 <th>Example Usage</th>
 </tr></thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>man</td>
 <td>Manual</td>
 <td>HELP!</td>
 <td><code>man cd</code></td>
 </tr>
-<tr class="even">
+<tr>
 <td>pwd</td>
 <td>Print working directory</td>
 <td>Where am I?</td>
 <td><code>pwd</code></td>
 </tr>
-<tr class="odd">
+<tr>
 <td>mkdir</td>
 <td>Make directory</td>
 <td>Create a new directory</td>
 <td><code>mkdir dir1</code></td>
 </tr>
-<tr class="even">
+<tr>
 <td>cd</td>
 <td>Change directory</td>
 <td>Go to the following location</td>
 <td><code>cd dir1</code></td>
 </tr>
-<tr class="odd">
+<tr>
 <td>ls</td>
 <td>List</td>
 <td>Shows what is inside a directory</td>
 <td><code>ls dir1</code></td>
 </tr>
-<tr class="even">
+<tr>
 <td>cp</td>
 <td>Copy</td>
 <td>Copies a source file to a new destination</td>
 <td><code>cp src dest</code></td>
 </tr>
-<tr class="odd">
+<tr>
 <td>mv</td>
 <td>Move</td>
 <td>Moves a source file to a new destination</td>
 <td><code>mv source destination</code></td>
 </tr>
-<tr class="even">
+<tr>
 <td>rm</td>
 <td>Remove</td>
 <td>Deletes a file or a directory</td>
 <td><code>rm dir1/bad_file</code></td>
 </tr>
-<tr class="odd">
+<tr>
 <td>cat</td>
 <td>Concatenate</td>
 <td>Prints out the contents of a file</td>
 <td><code>cat results.txt</code></td>
 </tr>
-<tr class="even">
+<tr>
 <td>more</td>
 <td>more</td>
 <td>Prints out the contents of a file. Better for large files to
 scroll</td>
 <td><code>more results.txt</code></td>
 </tr>
-<tr class="odd">
+<tr>
 <td>nano, emacs, gedit</td>
 <td>Text editor</td>
 <td>Programs that edit plain text files (no formatting)</td>
@@ -5345,8 +5345,8 @@ any links that you are not going to use.
   "url": "https://davecash75.github.io/aaic-neuroimaging-workshop/aio.html",
   "identifier": "https://davecash75.github.io/aaic-neuroimaging-workshop/aio.html",
   "dateCreated": "2025-06-30",
-  "dateModified": "2026-04-28",
-  "datePublished": "2026-04-28"
+  "dateModified": "2026-05-05",
+  "datePublished": "2026-05-05"
 }
 
   </script><script>
