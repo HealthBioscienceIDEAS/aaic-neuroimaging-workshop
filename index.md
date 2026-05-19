@@ -4,9 +4,9 @@ site: sandpaper::sandpaper_site
 
 |  |  |
 | --- | --- |
-| Date | Friday 25th July 2025 |
-| Time | 1:00 - 5:00 PM Eastern Daylight Time | 
-| Location | Westin Harbour Castle, Pier 7&8 - Toronto, Canada |
+| Date | Friday 10th July 2026 |
+| Time | 8:00AM - 12:00PM British Summer Time | 
+| Location | Aurora Ballroom 2, 3, 5, 6 — InterContinental-The O2 — London, United Kingdom |
 | Format | In-person workshop | 
 
 The workshop will provide practical information and an enhanced understanding
@@ -82,15 +82,15 @@ modalities used in dementia research.
 
 | Time | Topic | Leader(s) | 
 | --- | --- | --- |
-| 1:00-1:10 PM | Opening Remarks | David Cash and Tobey Betthauser |
-| 1:10-1:40 PM |  Image data: Basic Structure and Function | Ludovica Griffanti | 
-| 1:40-2:10 PM | Structural MRI | David Cash | 
-| 2:10-2:20 PM | Break | |
-| 2:20-2:50 PM | Introduction to Advanced Imaging Analysis Sections (PET, dMRI,fMRI) | Tobey Betthauser, Alexa Pichet Binette, Luigi Lorenzini |
-| 2:50-3:40 PM | Independent working session 1: Diffsion MRI, functional MRI, PET | Facilitated by all organizers |
-| 3:40-3:50 PM | Break | |
-| 3:50-4:40 PM | Independent working session 2: Diffsion MRI, functional MRI, PET   | Facilitated by all organizers |
-| 4:40-5:00 PM | Wrapup, Q&A, feedback | David Cash and Tobey Betthauser |
+| 8:00-8:10 AM | Opening Remarks | David Cash and Tobey Betthauser |
+| 8:10-8:40 AM |  Image data: Basic Structure and Function | Ludovica Griffanti | 
+| 8:40-9:10 AM | Structural MRI | David Cash | 
+| 9:10-9:20 AM | Break | |
+| 9:20-9:50 AM | Introduction to Advanced Imaging Analysis Sections (PET, dMRI,fMRI) | Tobey Betthauser, Alexa Pichet Binette, Luigi Lorenzini |
+| 9:50-10:40 AM | Independent working session 1: Diffsion MRI, functional MRI, PET | Facilitated by all organizers |
+| 10:40-10:50 AM | Break | |
+| 10:50-11:40 AM | Independent working session 2: Diffsion MRI, functional MRI, PET   | Facilitated by all organizers |
+| 11:40AM - 12:00 PM | Wrapup, Q&A, feedback | David Cash and Tobey Betthauser |
 
 
 

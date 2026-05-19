@@ -8,7 +8,7 @@ This page will tell you how to access your personal virtual (VM) to run these
 lessons. The virtual machine is essentially a "computer within a computer". 
 For this workshop, we have created virtual machines that have all the 
 necessary software to perform the lessons. Here are the requirements for AWS 
-AppStream2.0 from the manufacturer’s website: Users can access AppStream 2.0 
+WorkSpaces from the manufacturer’s website: Users can access WorkSpaces 
 through an HTML5-capable web browser on a desktop computer such as a Windows, 
 Mac, Chromebook, or Linux computer. HTML5-capable web browsers that can be 
 used include the following: Google Chrome, Safari, Microsoft Edge. 
@@ -67,7 +67,7 @@ This is now on the virtual machine's clipboard. You can past this in by
 right-clicking in a terminal window and selecting paste.
 ![](fig/appstream_terminal_righclick.png){alt="Right click mouse in terminal"}
 
-And voila! You shoudl see the paste in the virtual machine.
+And voila! You should see the paste in the virtual machine.
 ![](fig/appstream_terminal_pasted.png){alt="Text pasted into terminal"}
 
 :::::::::::::::::::::::::
