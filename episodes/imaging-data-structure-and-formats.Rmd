@@ -370,13 +370,13 @@ This can result in complicated data that can be arranged in many different ways.
 Despite the structure of a neuroimaging study is fairly standard, so far there 
 is no consensus on how to organize and share data obtained in neuroimaging 
 experiments. The 
-[Brain Imaging Data Structure (BIDS)](https://bids.neuroimaging.io/get_started.html) 
+[Brain Imaging Data Structure (BIDS)](https://bids.neuroimaging.io/index.html) 
 is a framework for organizing data in a standardized way.
 
 The main specifications regard how to structure data/metadata within a 
 hierarchy of folders and how to name files. The data you will use in this 
 workshop will mostly be organized according to this standard. If you are 
-interested, you can find the details of these specifications in the [BIDS starter kit](https://bids-standard.github.io/bids-starter-kit/index.html).
+interested, you can find the details of these specifications in the [BIDS starter kit](https://bids.neuroimaging.io/getting_started/index.html).
 
 ## Visualizing neuroimaging data - FSLeyes
 FSLeyes (pronounced **fossilize**) is the FSL image viewer for 3D and 4D data. 
@@ -390,7 +390,7 @@ be likely to use throughout the workshop, while other more specific features
 will be introduced at a later point. If you are already familiar with FSLeyes, 
 feel free to skip this part and move on to another section of the workshop.
 
-For a full overview of what FSLeyes can do, take a look at the [FSLeyes user guide](https://open.win.ox.ac.uk/pages/fsl/fsleyes/fsleyes/userdoc/index.html).
+For a full overview of what FSLeyes can do, take a look at the [FSLeyes user guide](https://open.oxcin.ox.ac.uk/pages/fsl/fsleyes/fsleyes/userdoc/index.html).
 
 ### Getting started
 Assuming you are still in the `~/data/ImageDataVisualization` directory,
@@ -576,6 +576,7 @@ Now load in a second image (`sub-OAS30015_T1w_brain_pve_0.nii.gz`) using
 _File &gt; Add from file_.  This image is a tissue segmentation image of the 
 cerebrospinal fluid. In the bottom-left panel is a list of loaded images 
 - the _overlay list_.
+
 ![](fig/overlay_list_oasis.png){alt="Overlay list" height='150px'}
 
 The overlay list shows the images which are currently loaded into FSLeyes. 
@@ -711,9 +712,44 @@ Here are the screenshots you should see:
 :::::::::::::::::::::::::::::::::
 
 For more information about the atlases available please refer to the 
-[FSL Wiki](https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/Atlases).
+[FSL Documentation](https://fsl.fmrib.ox.ac.uk/fsl/docs/other/datasets.html).
+
 
 Quit FSLeyes when you have finished looking at the atlases.
+
+## Next steps
+In the [next episode on structural MRI](structural-mri.Rmd), we will learn how 
+to align (register) the two images together to be able to look at the same 
+point in the brain in both images.
+
+## Stretch exercises
+If you have completed all of the above and want to keep working more on imaging structure and format, please try the [bonus exercises below](#bonus-exercises).
+
+## Additional material
+For a more extensive tutorial on FSLeyes features, please refer to the 
+[FSL course - FSLeyes practical](https://pages.fmrib.ox.ac.uk/fslcourse/practicals/intro1/index.html)
+
+FSLeyes manual: https://open.oxcin.ox.ac.uk/pages/fsl/fsleyes/fsleyes/userdoc/index.html
+
+## References
+* FSL course material: https://pages.fmrib.ox.ac.uk/fslcourse/website/online_materials.html
+* McCarthy, Paul. (2021). FSLeyes (1.2.0). Zenodo. https://doi.org/10.5281/zenodo.5504114 
+* Michael Joseph, Jerrold Jeyachandra, and Erin Dickie (eds): "Data Carpentry: Introduction to MRI Data Analysis." Version 2019.11, November 2019,
+[https://github.com/carpentries-incubator/SDC-BIDS-IntroMRI](https://carpentries-incubator.github.io/SDC-BIDS-IntroMRI/open-mri-datasets/index.html)
+
+::::::::::::::::::::::::::::::::::::: keypoints 
+
+- Images are sheets or cubes of numbers.
+- Medical image data is typically stored in DICOM or Nifti format. They include
+a header that contains information on the patient and/or the image characteristics.
+- An affine transformation maps the voxel location to real-world coordinates.
+- Medical image viewers allow to navigate an image, adjust contrast, and 
+localise brain regions with respect to an atlas.
+
+::::::::::::::::::::::::::::::::::::::::::::::::
+
+## Bonus exercises
+If you have completed all of the above and want to keep working on this topic, please try the exercises below.
 
 ### BONUS EXERCISE: Viewing different imaging modalities
 So far we have seen examples of MRI T1-weighted scans (T1w). In research as 
@@ -731,10 +767,10 @@ Let's take two imaging modalities from a different participant:
 `sub-OAS30003_T1w.nii.gz` and `sub-OAS30003_FLAIR.nii.gz`
 
 ::::::::::::::::::::::challenge
-*Do they have the same dimension?*
+*Do they have the same **dimension**?*
 
 :::::::::::::::::::::: hint
-Use `fslhd` to get information on dimension and voxel size. 
+Use `fslhd` to get information on dimension. 
 ::::::::::::::::::::::::::
 
 :::::::::::::::::::::::: solution 
@@ -747,10 +783,10 @@ image are 256 x 256 x 35.
 ::::::::::::::::::::::::
 
 ::::::::::::::::::::::challenge
-*Do they have the same resolution?*
+*Do they have the same **resolution**?*
 
 :::::::::::::::::::::: hint
-Use `fslhd` to get information on dimension and voxel size. 
+Use `fslhd` to get information on voxel size. 
 ::::::::::::::::::::::::::
 
 :::::::::::::::::::::::: solution 
@@ -758,7 +794,7 @@ Use `fslhd` to get information on dimension and voxel size.
 
 From the same `fslhd` commands, the resolution can be found in 
 the fields `pixdim1`, `pixdim2`, and `pixdim3`. For the T1 the resolution is
-1.20 x 1.05 x 1.05 mm. For the FLAIR it is 0.859 x 0.859 x 5.00mm
+1.20 x 1.05 x 1.05 mm. For the FLAIR it is 0.859 x 0.859 x 5.00 mm
 ::::::::::::::::::::::::
 ::::::::::::::::::::::::
 
@@ -776,7 +812,7 @@ or by double clicking on the image name in
 the overlay list.
 
 ::::::::::::::::::::::challenge
-*Do they have the same orientation?*
+*Do they have the same **orientation**?*
 
 :::::::::::::::::::::: hint
 Look at the location panel to help with information about orientation
@@ -787,6 +823,7 @@ Look at the location panel to help with information about orientation
 
 In the bottom right panel you should see the warning: 
 “Images have different orientations/fields of view”
+Even if the images were acquired from the same person in the same session, the position of the field of view is slightly different, so the images are not perfectly aligned. FSLeyes tries to align them as best as it can, but image registration is the analysis step that is usually needed if we want to align images.
 
 ::::::::::::::::::::::::
 ::::::::::::::::::::::::
@@ -1104,31 +1141,4 @@ compliance with the BIDS standard:
 ::::::::::::::::::::::
 ::::::::::::::::::::::
 
-## Next steps
-In the [next episode on structural MRI](structural-mri.Rmd), we will learn how 
-to align (register) the two images together to be able to look at the same 
-point in the brain in both images.
-
-## Additional material
-For a more extensive tutorial on FSLeyes features, please refer to the 
-[FSL course - FSLeyes practical](https://open.win.ox.ac.uk/pages/fslcourse/practicals/intro1/index.html)
-
-FSLeyes manual: https://open.win.ox.ac.uk/pages/fsl/fsleyes/fsleyes/userdoc/index.html
-
-## References
-* FSL course material: https://open.win.ox.ac.uk/pages/fslcourse/website/online_materials.html
-* McCarthy, Paul. (2021). FSLeyes (1.2.0). Zenodo. https://doi.org/10.5281/zenodo.5504114 
-* Michael Joseph, Jerrold Jeyachandra, and Erin Dickie (eds): "Data Carpentry: Introduction to MRI Data Analysis." Version 2019.11, November 2019,
-[https://github.com/carpentries-incubator/SDC-BIDS-IntroMRI](https://carpentries-incubator.github.io/SDC-BIDS-IntroMRI/open-mri-datasets/index.html)
-
-::::::::::::::::::::::::::::::::::::: keypoints 
-
-- Images are sheets or cubes of numbers.
-- Medical image data is typically stored in DICOM or Nifti format. They include
-a header that contains information on the patient and/or the image characteristics.
-- An affine transformation maps the voxel location to real-world coordinates.
-- Medical image viewers allow to navigate an image, adjust contrast, and 
-localise brain regions with respect to an atlas.
-
-::::::::::::::::::::::::::::::::::::::::::::::::
 
