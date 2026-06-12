@@ -50,11 +50,11 @@ webinars ahead of time**. The links to the webinars and the slides are below.
 
 | Webinar Title | Slides |
 | --- | --- |
-| [Data Structure and Formats](https://training.alz.org/products/4520/neuroimaging-pia-basics-of-neuroimaging-data-structure-and-formats) |[Slides](files/1_BasicsNeuroimaging_StructureFormat-Griffanti.pdf) | 
-| [The Basics of Neuroimaging: Structural Magnetic Resonance Imaging (MRI)](https://training.alz.org/products/4524/neuroimaging-pia-the-basics-of-neuroimaging-structural-magnetic-resonance-imaging-mri) | [Slides](files/2_BasicsNeuroimaging_StructuralMRI-Cash.pdf) | 
-| [Positron emission tomography (PET)](https://training.alz.org/products/4525/neuroimaging-pia-the-basics-of-neuroimaging-positron-emission-tomography-pet) | [Slides](files/3_BasicsNeuroimaging_PET-Betthauser.pdf) |
-| [Diffusion-Weighted Imaging (DWI)](https://training.alz.org/products/4526/neuroimaging-pia-the-basics-of-neuroimaging-diffusion-weighted-imaging-dwi) | [Slides](files/4_BasicsNeuroimaging_Diffusion_AlexaPB.pdf) |
-| [Functional Magnetic Resonance Imaging (fMRI)](https://training.alz.org/products/4528/neuroimaging-pia-the-basics-of-neuroimaging-functional-magnetic-resonance-imaging-fmri) | [Slides](files/5_BasicsNeuroimaging_Functional_Luigi.pdf) |
+| [Data Structure and Formats](https://istaart.alz.org/video/70) |[Slides](files/1_BasicsNeuroimaging_StructureFormat-Griffanti.pdf) | 
+| [The Basics of Neuroimaging: Structural Magnetic Resonance Imaging (MRI)](https://istaart.alz.org/video/67) | [Slides](files/2_BasicsNeuroimaging_StructuralMRI-Cash.pdf) | 
+| [Positron emission tomography (PET)](https://istaart.alz.org/video/66) | [Slides](files/3_BasicsNeuroimaging_PET-Betthauser.pdf) |
+| [Diffusion-Weighted Imaging (DWI)](https://istaart.alz.org/video/64) | [Slides](files/4_BasicsNeuroimaging_Diffusion_AlexaPB.pdf) |
+| [Functional Magnetic Resonance Imaging (fMRI)](https://istaart.alz.org/video/61) | [Slides](files/5_BasicsNeuroimaging_Functional_Luigi.pdf) |
 
 At the workshop, we will all be using a standard environment, using a virtual machine (VM) hosted on the cloud. This ensures that everyone will be seeing the exact same screen for these lessons, regardless of if you are using a Mac or Windows operating system. You can find out more how to access this virtual machine below.
 
