@@ -170,8 +170,10 @@
 <li><a href="#image-information">Image information</a></li>
 <li><a href="#viewing-atlases">Viewing Atlases</a></li>
 <li><a href="#next-steps">Next steps</a></li>
+<li><a href="#stretch-exercises">Stretch exercises</a></li>
 <li><a href="#additional-material">Additional material</a></li>
 <li><a href="#references">References</a></li>
+<li><a href="#bonus-exercises">Bonus exercises</a></li>
         </ul></div><!--/div.accordion-body-->
     </div><!--/div.accordion-collapse-->
 
@@ -281,7 +283,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Imaging Data: Structure And Formats</h1>
-        <p>Last updated on 2026-06-09 |
+        <p>Last updated on 2026-06-12 |
 
         <a href="https://github.com/davecash75/aaic-neuroimaging-workshop/edit/main/episodes/imaging-data-structure-and-formats.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -754,14 +756,14 @@ population</td>
 non-imaging data. This can result in complicated data that can be
 arranged in many different ways. Despite the structure of a neuroimaging
 study is fairly standard, so far there is no consensus on how to
-organize and share data obtained in neuroimaging experiments. The <a href="https://bids.neuroimaging.io/get_started.html" class="external-link">Brain Imaging Data
+organize and share data obtained in neuroimaging experiments. The <a href="https://bids.neuroimaging.io/index.html" class="external-link">Brain Imaging Data
 Structure (BIDS)</a> is a framework for organizing data in a
 standardized way.</p>
 <p>The main specifications regard how to structure data/metadata within
 a hierarchy of folders and how to name files. The data you will use in
 this workshop will mostly be organized according to this standard. If
 you are interested, you can find the details of these specifications in
-the <a href="https://bids-standard.github.io/bids-starter-kit/index.html" class="external-link">BIDS
+the <a href="https://bids.neuroimaging.io/getting_started/index.html" class="external-link">BIDS
 starter kit</a>.</p>
 </div>
 </section><section><h2 class="section-heading" id="visualizing-neuroimaging-data---fsleyes">Visualizing neuroimaging data - FSLeyes<a class="anchor" aria-label="anchor" href="#visualizing-neuroimaging-data---fsleyes"></a></h2>
@@ -775,7 +777,7 @@ you will be likely to use throughout the workshop, while other more
 specific features will be introduced at a later point. If you are
 already familiar with FSLeyes, feel free to skip this part and move on
 to another section of the workshop.</p>
-<p>For a full overview of what FSLeyes can do, take a look at the <a href="https://open.win.ox.ac.uk/pages/fsl/fsleyes/fsleyes/userdoc/index.html" class="external-link">FSLeyes
+<p>For a full overview of what FSLeyes can do, take a look at the <a href="https://open.oxcin.ox.ac.uk/pages/fsl/fsleyes/fsleyes/userdoc/index.html" class="external-link">FSLeyes
 user guide</a>.</p>
 <div class="section level3">
 <h3 id="getting-started">Getting started<a class="anchor" aria-label="anchor" href="#getting-started"></a></h3>
@@ -981,8 +983,8 @@ at the very top of the view).</p>
 (<code>sub-OAS30015_T1w_brain_pve_0.nii.gz</code>) using <em>File &gt;
 Add from file</em>. This image is a tissue segmentation image of the
 cerebrospinal fluid. In the bottom-left panel is a list of loaded images
-- the <em>overlay list</em>. <img src="../fig/overlay_list_oasis.png" alt="Overlay list" height="150" class="figure"></p>
-<p>The overlay list shows the images which are currently loaded into
+- the <em>overlay list</em>.</p>
+<figure><img src="../fig/overlay_list_oasis.png" alt="Overlay list" height="150" class="figure mx-auto d-block"></figure><p>The overlay list shows the images which are currently loaded into
 FSLeyes. When you select an image in this list, it becomes the
 <strong>currently selected</strong> image - in FSLeyes, you can only
 select one image at a time.</p>
@@ -1112,10 +1114,52 @@ right).</p>
 </div>
 </div>
 <p>For more information about the atlases available please refer to the
-<a href="https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/Atlases" class="external-link">FSL
-Wiki</a>.</p>
+<a href="https://fsl.fmrib.ox.ac.uk/fsl/docs/other/datasets.html" class="external-link">FSL
+Documentation</a>.</p>
 <p>Quit FSLeyes when you have finished looking at the atlases.</p>
 </div>
+</section><section><h2 class="section-heading" id="next-steps">Next steps<a class="anchor" aria-label="anchor" href="#next-steps"></a></h2>
+<hr class="half-width"><p>In the <a href="structural-mri.html">next episode on structural
+MRI</a>, we will learn how to align (register) the two images together
+to be able to look at the same point in the brain in both images.</p>
+</section><section><h2 class="section-heading" id="stretch-exercises">Stretch exercises<a class="anchor" aria-label="anchor" href="#stretch-exercises"></a></h2>
+<hr class="half-width"><p>If you have completed all of the above and want to keep working more
+on imaging structure and format, please try the <a href="#bonus-exercises">bonus exercises below</a>.</p>
+</section><section><h2 class="section-heading" id="additional-material">Additional material<a class="anchor" aria-label="anchor" href="#additional-material"></a></h2>
+<hr class="half-width"><p>For a more extensive tutorial on FSLeyes features, please refer to
+the <a href="https://pages.fmrib.ox.ac.uk/fslcourse/practicals/intro1/index.html" class="external-link">FSL
+course - FSLeyes practical</a></p>
+<p>FSLeyes manual: <a href="https://open.oxcin.ox.ac.uk/pages/fsl/fsleyes/fsleyes/userdoc/index.html" class="external-link uri">https://open.oxcin.ox.ac.uk/pages/fsl/fsleyes/fsleyes/userdoc/index.html</a></p>
+</section><section><h2 class="section-heading" id="references">References<a class="anchor" aria-label="anchor" href="#references"></a></h2>
+<hr class="half-width"><ul><li>FSL course material: <a href="https://pages.fmrib.ox.ac.uk/fslcourse/website/online_materials.html" class="external-link uri">https://pages.fmrib.ox.ac.uk/fslcourse/website/online_materials.html</a>
+</li>
+<li>McCarthy, Paul. (2021). FSLeyes (1.2.0). Zenodo. <a href="https://doi.org/10.5281/zenodo.5504114" class="external-link uri">https://doi.org/10.5281/zenodo.5504114</a>
+</li>
+<li>Michael Joseph, Jerrold Jeyachandra, and Erin Dickie (eds): “Data
+Carpentry: Introduction to MRI Data Analysis.” Version 2019.11, November
+2019, <a href="https://carpentries-incubator.github.io/SDC-BIDS-IntroMRI/open-mri-datasets/index.html" class="external-link">https://github.com/carpentries-incubator/SDC-BIDS-IntroMRI</a>
+</li>
+</ul><div id="keypoints1" class="callout keypoints">
+<div class="callout-square">
+<i class="callout-icon" data-feather="key"></i>
+</div>
+<span class="callout-header">Key Points</span>
+<div class="callout-inner">
+<div class="callout-content">
+<ul><li>Images are sheets or cubes of numbers.</li>
+<li>Medical image data is typically stored in DICOM or Nifti format.
+They include a header that contains information on the patient and/or
+the image characteristics.</li>
+<li>An affine transformation maps the voxel location to real-world
+coordinates.</li>
+<li>Medical image viewers allow to navigate an image, adjust contrast,
+and localise brain regions with respect to an atlas.</li>
+</ul></div>
+</div>
+</div>
+</section><section><h2 class="section-heading" id="bonus-exercises">Bonus exercises<a class="anchor" aria-label="anchor" href="#bonus-exercises"></a></h2>
+<hr class="half-width"><p>If you have completed all of the above and want to keep working on
+this topic, please try the exercises below.</p>
 <div class="section level3">
 <h3 id="bonus-exercise-viewing-different-imaging-modalities">BONUS EXERCISE: Viewing different imaging modalities<a class="anchor" aria-label="anchor" href="#bonus-exercise-viewing-different-imaging-modalities"></a></h3>
 <p>So far we have seen examples of MRI T1-weighted scans (T1w). In
@@ -1140,7 +1184,7 @@ session, the images may differ in orientation and resolution.</p>
 <div class="callout-inner">
 <h3 class="callout-title">Challenge</h3>
 <div class="callout-content">
-<p><em>Do they have the same dimension?</em></p>
+<p><em>Do they have the same <strong>dimension</strong>?</em></p>
 </div>
 </div>
 </div>
@@ -1151,8 +1195,7 @@ session, the images may differ in orientation and resolution.</p>
 </button>
 <div id="collapseHint1" class="accordion-collapse collapse" data-bs-parent="#accordionHint1" aria-labelledby="headingHint1">
 <div class="accordion-body">
-<p>Use <code>fslhd</code> to get information on dimension and voxel
-size.</p>
+<p>Use <code>fslhd</code> to get information on dimension.</p>
 </div>
 </div>
 </div>
@@ -1181,7 +1224,7 @@ x 35.</p>
 <div class="callout-inner">
 <h3 class="callout-title">Challenge</h3>
 <div class="callout-content">
-<p><em>Do they have the same resolution?</em></p>
+<p><em>Do they have the same <strong>resolution</strong>?</em></p>
 </div>
 </div>
 </div>
@@ -1192,8 +1235,7 @@ x 35.</p>
 </button>
 <div id="collapseHint2" class="accordion-collapse collapse" data-bs-parent="#accordionHint2" aria-labelledby="headingHint2">
 <div class="accordion-body">
-<p>Use <code>fslhd</code> to get information on dimension and voxel
-size.</p>
+<p>Use <code>fslhd</code> to get information on voxel size.</p>
 </div>
 </div>
 </div>
@@ -1209,7 +1251,7 @@ size.</p>
 <p>From the same <code>fslhd</code> commands, the resolution can be
 found in the fields <code>pixdim1</code>, <code>pixdim2</code>, and
 <code>pixdim3</code>. For the T1 the resolution is 1.20 x 1.05 x 1.05
-mm. For the FLAIR it is 0.859 x 0.859 x 5.00mm</p>
+mm. For the FLAIR it is 0.859 x 0.859 x 5.00 mm</p>
 </div>
 </div>
 </div>
@@ -1231,7 +1273,7 @@ in the overlay list.</p>
 <div class="callout-inner">
 <h3 class="callout-title">Challenge</h3>
 <div class="callout-content">
-<p><em>Do they have the same orientation?</em></p>
+<p><em>Do they have the same <strong>orientation</strong>?</em></p>
 </div>
 </div>
 </div>
@@ -1257,7 +1299,11 @@ orientation</p>
 <div class="accordion-body">
 <p><strong>No</strong></p>
 <p>In the bottom right panel you should see the warning: “Images have
-different orientations/fields of view”</p>
+different orientations/fields of view” Even if the images were acquired
+from the same person in the same session, the position of the field of
+view is slightly different, so the images are not perfectly aligned.
+FSLeyes tries to align them as best as it can, but image registration is
+the analysis step that is usually needed if we want to align images.</p>
 </div>
 </div>
 </div>
@@ -1736,47 +1782,11 @@ the BIDS standard:</p>
 </div>
 </div>
 </div>
-</div>
-</section><section><h2 class="section-heading" id="next-steps">Next steps<a class="anchor" aria-label="anchor" href="#next-steps"></a></h2>
-<hr class="half-width"><p>In the <a href="structural-mri.html">next episode on structural
-MRI</a>, we will learn how to align (register) the two images together
-to be able to look at the same point in the brain in both images.</p>
-</section><section><h2 class="section-heading" id="additional-material">Additional material<a class="anchor" aria-label="anchor" href="#additional-material"></a></h2>
-<hr class="half-width"><p>For a more extensive tutorial on FSLeyes features, please refer to
-the <a href="https://open.win.ox.ac.uk/pages/fslcourse/practicals/intro1/index.html" class="external-link">FSL
-course - FSLeyes practical</a></p>
-<p>FSLeyes manual: <a href="https://open.win.ox.ac.uk/pages/fsl/fsleyes/fsleyes/userdoc/index.html" class="external-link uri">https://open.win.ox.ac.uk/pages/fsl/fsleyes/fsleyes/userdoc/index.html</a></p>
-</section><section><h2 class="section-heading" id="references">References<a class="anchor" aria-label="anchor" href="#references"></a></h2>
-<hr class="half-width"><ul><li>FSL course material: <a href="https://open.win.ox.ac.uk/pages/fslcourse/website/online_materials.html" class="external-link uri">https://open.win.ox.ac.uk/pages/fslcourse/website/online_materials.html</a>
-</li>
-<li>McCarthy, Paul. (2021). FSLeyes (1.2.0). Zenodo. <a href="https://doi.org/10.5281/zenodo.5504114" class="external-link uri">https://doi.org/10.5281/zenodo.5504114</a>
-</li>
-<li>Michael Joseph, Jerrold Jeyachandra, and Erin Dickie (eds): “Data
-Carpentry: Introduction to MRI Data Analysis.” Version 2019.11, November
-2019, <a href="https://carpentries-incubator.github.io/SDC-BIDS-IntroMRI/open-mri-datasets/index.html" class="external-link">https://github.com/carpentries-incubator/SDC-BIDS-IntroMRI</a>
-</li>
-</ul><div id="keypoints1" class="callout keypoints">
-<div class="callout-square">
-<i class="callout-icon" data-feather="key"></i>
-</div>
-<span class="callout-header">Key Points</span>
-<div class="callout-inner">
-<div class="callout-content">
-<ul><li>Images are sheets or cubes of numbers.</li>
-<li>Medical image data is typically stored in DICOM or Nifti format.
-They include a header that contains information on the patient and/or
-the image characteristics.</li>
-<li>An affine transformation maps the voxel location to real-world
-coordinates.</li>
-<li>Medical image viewers allow to navigate an image, adjust contrast,
-and localise brain regions with respect to an atlas.</li>
-</ul></div>
-</div>
-</div>
 <!--
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.
  -->
+</div>
 </section></div> <!-- / div.lesson-content -->
     </main><!-- / main#main-content.main-content --><nav class="bottom-pagination mx-md-4" aria-label="Previous and Next Chapter"><div class="d-block d-sm-block d-md-none">
         <a class="chapter-link" href="../instructor/index.html"><i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>Previous</a>
@@ -1835,8 +1845,8 @@ any links that you are not going to use.
   "url": "https://davecash75.github.io/aaic-neuroimaging-workshop/instructor/imaging-data-structure-and-formats.html",
   "identifier": "https://davecash75.github.io/aaic-neuroimaging-workshop/instructor/imaging-data-structure-and-formats.html",
   "dateCreated": "2025-06-30",
-  "dateModified": "2026-06-09",
-  "datePublished": "2026-06-09"
+  "dateModified": "2026-06-12",
+  "datePublished": "2026-06-12"
 }
 
   </script><script>
