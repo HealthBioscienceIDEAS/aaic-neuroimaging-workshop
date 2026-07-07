@@ -853,7 +853,7 @@ between the two, but probably the most widely used is
 [dcm2niix](https://www.nitrc.org/plugins/mwiki/index.php/dcm2nii:MainPage)).
 
 You can find the sample data in `~/data/ImageDataVisualization/DICOM`. These
-example data sets come from Chris Rorden's 
+example data sets come from the organisers and Chris Rorden's 
 [dcm_validate data set](https://github.com/neurolabusc/dcm_validate). More
 information on this validation data set can be found in the 
 [accompanying paper](https://www.nature.com/articles/s41597-025-05503-w).
@@ -864,12 +864,12 @@ First let's change into the following directory
 cd ~/data/ImageDataVisualization/DICOM
 ```
 
-If you list the contents, you will see two separate subfolders:
+If you list the contents, you will see three separate subfolders:
 ```bash
 ls
 ```
 ```output
-dcm_qa_xa30  dcm_qa_xa30i
+dcm_qa_xa30  dcm_qa_xa30i  Subject01
 ```
 
 Let's first make a directory for the Nifti output
@@ -894,7 +894,7 @@ To get help, we use the -h option:
 dcm2niix -h
 ```
 ```output
-Chris Rorden's dcm2niiX version v1.0.20240202  GCC12.3.0 x86-64 (64-bit Linux)
+Chris Rorden's dcm2niiX version v1.0.20260416  GCC14.3.0 x86-64 (64-bit Linux)
 usage: dcm2niix [options] <in_folder>
  Options :
   -1..-9 : gz compression level (1=fastest..9=smallest, default 6)
@@ -922,11 +922,11 @@ usage: dcm2niix [options] <in_folder>
   -x : crop 3D acquisitions (y/n/i, default n, use 'i'gnore to neither crop nor rotate 3D acquistions)
   -z : gz compress images (y/o/i/n/3, default n) [y=pigz, o=optimal pigz, i=internal:miniz, n=no, 3=no,3D]
   --big-endian : byte order (y/n/o, default o) [y=big-end, n=little-end, o=optimal/native]
-  --progress : Slicer format progress information (y/n, default n)
   --ignore_trigger_times : disregard values in 0018,1060 and 0020,9153
   --terse : omit filename post-fixes (can cause overwrites)
   --version : report version
   --xml : Slicer format features
+  --progress : Slicer format progress information (y/n, default n)
  Defaults file : /home/as2-streaming-user/.dcm2nii.ini
  Examples :
   dcm2niix /Users/chris/dir
@@ -942,11 +942,11 @@ Example output filename: 'myFolder_MPRAGE_19770703150928_1.nii'
 ::::::::::::::::::::::
 
 ::::::::::::::::::::challenge
-*Choose either the* `dcm_qa_xa30` *or the* `dcm_qa_xa30i` *directory and*
-*construct a command to convert the images, storing the output in the directory*
+*Construct a command to convert the images in the*
+`Subject01` *directory, storing the output in the directory*
 `~/data/ImageDataVisualization/DICOM/Nifti`
 
-::::::::::::::::::::: hint
+:::::::::::::::::::::hint
 Look through the help output and determine which options that you will need.
 :::::::::::::::::::::
 
@@ -954,36 +954,14 @@ Look through the help output and determine which options that you will need.
 The simplest command to do this is below and the expected output follows
    
  ```bash
-dcm2niix -o Nifti dcm_qa_xa30
+dcm2niix -o Nifti Subject01
 ```
 ```output
-Chris Rorden's dcm2niiX version v1.0.20240202  GCC12.3.0 x86-64 (64-bit Linux)
-Found 95 DICOM file(s)
-Skipping non-image DICOM: dcm_qa_xa30/In/15_DWI_dir80_PA/15001_1.3.12.2.1107.5.2.43.67093.2022071112123487825308836_Raw.dcm
-Skipping non-image DICOM: dcm_qa_xa30/In/23_DWI_dir80_AP/23001_1.3.12.2.1107.5.2.43.67093.2022071112140679340412461_Raw.dcm
-Convert 21 DICOM as Nifti/dcm_qa_xa30_DWI_dir80_AP_20220711120427_17 (72x72x39x21)
-Convert 1 DICOM as Nifti/dcm_qa_xa30_DWI_dir80_PA_20220711120427_16 (72x72x39x1)
-Convert 1 DICOM as Nifti/dcm_qa_xa30_DWI_dir80_AP_20220711120427_22 (72x72x39x1)
-Convert 1 DICOM as Nifti/dcm_qa_xa30_gre_field_mapping_20220711120427_9_e2_ph (64x64x33x1)
-Convert 1 DICOM as Nifti/dcm_qa_xa30_asl_2d_tra_20220711120427_28 (64x64x12x1)
-Convert 1 DICOM as Nifti/dcm_qa_xa30_DWI_dir80_PA_20220711120427_14 (72x72x39x1)
-Convert 21 DICOM as Nifti/dcm_qa_xa30_DWI_dir80_PA_20220711120427_10 (72x72x39x21)
-Convert 20 DICOM as Nifti/dcm_qa_xa30_func-bold_task-fa_run-1_20220711120427_7 (64x64x33x20)
-Convert 1 DICOM as Nifti/dcm_qa_xa30_anat-T1w_acq-tfl_20220711120427_5 (128x128x96x1)
-Convert 1 DICOM as Nifti/dcm_qa_xa30_DWI_dir80_PA_20220711120427_13 (72x72x39x1)
-Convert 1 DICOM as Nifti/dcm_qa_xa30_DWI_dir80_PA_20220711120427_12 (72x72x39x1)
-Convert 1 DICOM as Nifti/dcm_qa_xa30_DWI_dir80_AP_20220711120427_19 (72x72x39x1)
-Slices not stacked: echo varies (TE 10, 12.46; echo 1, 2). Use 'merge 2D slices' option to force stacking
-Convert 1 DICOM as Nifti/dcm_qa_xa30_gre_field_mapping_20220711120427_8_e1 (64x64x33x1)
-Convert 1 DICOM as Nifti/dcm_qa_xa30_gre_field_mapping_20220711120427_8_e2 (64x64x33x1)
-Convert 7 DICOM as Nifti/dcm_qa_xa30_asl_2d_tra_20220711120427_25 (64x64x12x7)
-Convert 1 DICOM as Nifti/dcm_qa_xa30_anat-T1w_acq-tfl_20220711120427_6 (128x128x96x1)
-Convert 1 DICOM as Nifti/dcm_qa_xa30_DWI_dir80_AP_20220711120427_24 (72x72x39x1)
-Convert 1 DICOM as Nifti/dcm_qa_xa30_DWI_dir80_PA_20220711120427_11 (72x72x39x1)
-Convert 1 DICOM as Nifti/dcm_qa_xa30_asl_2d_tra_20220711120427_27 (64x64x12x1)
-Convert 1 DICOM as Nifti/dcm_qa_xa30_DWI_dir80_AP_20220711120427_20 (72x72x39x1)
-Convert 1 DICOM as Nifti/dcm_qa_xa30_DWI_dir80_AP_20220711120427_21 (72x72x39x1)
-Conversion required 0.901295 seconds (0.382864 for core code).
+Chris Rorden's dcm2niiX version v1.0.20260416  GCC14.3.0 x86-64 (64-bit Linux)
+Found 260 DICOM file(s)
+Convert 196 DICOM as Nifti/Subject01_GenerationR-Adults-Neuro_20210105173554_300 (220x220x196x1)
+Convert 64 DICOM as Nifti/Subject01_GenerationR-Adults-Neuro_20210105173554_400 (512x512x64x1)
+Conversion required 3.165409 seconds (0.639208 for core code).
 ```
 ::::::::::::::::::::::
 ::::::::::::::::::::::
@@ -994,62 +972,21 @@ ls Nifti/
 ```
 ::::::::::::::: spoiler
 ```output
-dcm_qa_xa30_anat-T1w_acq-tfl_20220711120427_5.json
-dcm_qa_xa30_anat-T1w_acq-tfl_20220711120427_5.nii
-dcm_qa_xa30_anat-T1w_acq-tfl_20220711120427_6.json
-dcm_qa_xa30_anat-T1w_acq-tfl_20220711120427_6.nii
-dcm_qa_xa30_asl_2d_tra_20220711120427_25.json
-dcm_qa_xa30_asl_2d_tra_20220711120427_25.nii
-dcm_qa_xa30_asl_2d_tra_20220711120427_27.json
-dcm_qa_xa30_asl_2d_tra_20220711120427_27.nii
-dcm_qa_xa30_asl_2d_tra_20220711120427_28.json
-dcm_qa_xa30_asl_2d_tra_20220711120427_28.nii
-dcm_qa_xa30_DWI_dir80_AP_20220711120427_17.bval
-dcm_qa_xa30_DWI_dir80_AP_20220711120427_17.bvec
-dcm_qa_xa30_DWI_dir80_AP_20220711120427_17.json
-dcm_qa_xa30_DWI_dir80_AP_20220711120427_17.nii
-dcm_qa_xa30_DWI_dir80_AP_20220711120427_19.json
-dcm_qa_xa30_DWI_dir80_AP_20220711120427_19.nii
-dcm_qa_xa30_DWI_dir80_AP_20220711120427_20.json
-dcm_qa_xa30_DWI_dir80_AP_20220711120427_20.nii
-dcm_qa_xa30_DWI_dir80_AP_20220711120427_21.json
-dcm_qa_xa30_DWI_dir80_AP_20220711120427_21.nii
-dcm_qa_xa30_DWI_dir80_AP_20220711120427_22.json
-dcm_qa_xa30_DWI_dir80_AP_20220711120427_22.nii
-dcm_qa_xa30_DWI_dir80_AP_20220711120427_24.json
-dcm_qa_xa30_DWI_dir80_AP_20220711120427_24.nii
-dcm_qa_xa30_DWI_dir80_PA_20220711120427_10.bval
-dcm_qa_xa30_DWI_dir80_PA_20220711120427_10.bvec
-dcm_qa_xa30_DWI_dir80_PA_20220711120427_10.json
-dcm_qa_xa30_DWI_dir80_PA_20220711120427_10.nii
-dcm_qa_xa30_DWI_dir80_PA_20220711120427_11.json
-dcm_qa_xa30_DWI_dir80_PA_20220711120427_11.nii
-dcm_qa_xa30_DWI_dir80_PA_20220711120427_12.json
-dcm_qa_xa30_DWI_dir80_PA_20220711120427_12.nii
-dcm_qa_xa30_DWI_dir80_PA_20220711120427_13.json
-dcm_qa_xa30_DWI_dir80_PA_20220711120427_13.nii
-dcm_qa_xa30_DWI_dir80_PA_20220711120427_14.json
-dcm_qa_xa30_DWI_dir80_PA_20220711120427_14.nii
-dcm_qa_xa30_DWI_dir80_PA_20220711120427_16.json
-dcm_qa_xa30_DWI_dir80_PA_20220711120427_16.nii
-dcm_qa_xa30_func-bold_task-fa_run-1_20220711120427_7.json
-dcm_qa_xa30_func-bold_task-fa_run-1_20220711120427_7.nii
-dcm_qa_xa30_gre_field_mapping_20220711120427_8_e1.json
-dcm_qa_xa30_gre_field_mapping_20220711120427_8_e1.nii
-dcm_qa_xa30_gre_field_mapping_20220711120427_8_e2.json
-dcm_qa_xa30_gre_field_mapping_20220711120427_8_e2.nii
-dcm_qa_xa30_gre_field_mapping_20220711120427_9_e2_ph.json
-dcm_qa_xa30_gre_field_mapping_20220711120427_9_e2_ph.nii
+Subject01_GenerationR-Adults-Neuro_20210105173554_300.json
+Subject01_GenerationR-Adults-Neuro_20210105173554_300.nii
+Subject01_GenerationR-Adults-Neuro_20210105173554_400.json
+Subject01_GenerationR-Adults-Neuro_20210105173554_400.nii
 ```
 
 ::::::::::::::::::::::::
 
-You will see a files that have the same name, but with different extensions:
+You will see files that have the same name, but with different extensions:
 
 - `.nii` extension: These are the NIfTI files that are the main output
 - `.json` extension: These are called "sidecars". They hold additional metadata about the image and are needed for compatibility with BIDS
-- `.bval` and `.bvec` extensions: These are additional files needed to store gradient information for [diffusion imaging](diffusion-weighted-imaging.Rmd)
-
+- `.bval` and `.bvec` extensions: You may see these additional files if you are
+converting [diffusion imaging](diffusion-weighted-imaging.Rmd), as they are 
+needed to store gradient information.
 
 ::::::::::::::::::::challenge
 *Figure out what option to use to store a compressed gzipped-version of the NIfTI file.*
@@ -1062,12 +999,12 @@ Look through the help output and find the option that deals with "gz compress im
 Here we add the `-z y` option to the command:
    
 ```bash
-dcm2niix -z y -o Nifti dcm_qa_xa30
+dcm2niix -z y -o Nifti Subject01
 ```
 
 In the previous command, the Nifti files produced had only the `.nii` extension 
-(for example: `dcm_qa_xa30_anat-T1w_acq-tfl_20220711120427_5.nii`). Now these
-NIfTI files have a `.gz` at the end --> `dcm_qa_xa30_anat-T1w_acq-tfl_20220711120427_5.nii.gz`
+(for example: `Subject01_GenerationR-Adults-Neuro_20210105173554_400.nii`). Now these
+NIfTI files have a `.gz` at the end --> `Subject01_GenerationR-Adults-Neuro_20210105173554_400.nii.gz`
 
 ::::::::::::::::::::::
 ::::::::::::::::::::::
@@ -1109,24 +1046,51 @@ name your file:
 
 The `dcm2niix` default is `%f_%p_%t_%s`. In our example:
 
-- `%f` is replaced by the folder name `dcm_qa_xa30`
-- `%p` is replaced by the protocol `anat-T1w_acq-tfl`
-- `%t` is replaced by the date and time of the acquisition `20220711120427`
-- `%s` is replaced by the series number, `5`
+- `%f` is replaced by the folder name `Subject01`
+- `%p` is replaced by the protocol `GenerationR-Adults-Neuro`
+- `%t` is replaced by the date and time of the acquisition `20210105173554`
+- `%s` is replaced by the series number, `300` or `400`
 
 
-How you name them  tends to be your personal choice, here is one approach
+How you name them tends to be your personal choice, here is one approach
    
 ```bash
-dcm2niix -f %i_%s_%d -z y -o Nifti dcm_qa_xa30
+dcm2niix -f %i_%s_%d -z y -o Nifti Subject01
 ```
 
 Here the file that was originally named 
-`dcm_qa_xa30_anat-T1w_acq-tfl_20220711120427_5.nii` is now named
-`12343@hucheng_5_anat-T1w_acq-tfl.nii`
+`Subject01_GenerationR-Adults-Neuro_20210105173554_400.nii.gz` is now named
+`genrparent_test_400_PU_Ax_T2_FLAIR.nii.gz`
+:::::::::::::::::::::
+:::::::::::::::::::::
 
-**NOTE** Hucheng is the name of the individual who acquiring the data and provided
+::::::::::::::::::::challenge
+*Try converting the data found in some of the additional directories, `dcm_qa_xa30`. 
+What sequences does it look like this acquisition contains?*
+
+::::::::::::::::::::: hint
+Make sure to include the Series description or the prtocol flag  to find the 
+different names of the data. 
+
+**NOTE** If you see `Hucheng` in the output filenames, do not worry, 
+as this is the name of the individual who acquiring the data and provided
 the scans for the valdiation set. This is not the personal data of the individual.
+:::::::::::::::::::::
+
+:::::::::::::::::::::solution
+Running the following command
+```bash
+dcm2niix -o Nifti -f %i_%s_%d dcm_qa_xa30
+```
+and then looking at the output text from the command and the files 
+found in the `Nifti` directory, we see the following scans:
+
+* Structural T1-weighted images (`12343@hucheng_5_anat-T1w_acq-tfl.nii`)
+* A functional MRI scan (`12343@hucheng_7_func-bold_task-fa_run-1.nii`)
+* DWI images (`12343@hucheng_10_DWI_dir80_PA.nii` with `.bvec` and
+`.bval extensions as well)
+* A field mapping scan, which helps with DWI and fMRI processing (`12343@hucheng_8_gre_field_mapping_e1.nii` for example, but there are multiple echoes)
+* ASL images (`12343@hucheng_25_asl_2d_tra.nii`)
 
 Many people choose to use the BIDS standard for naming the data. This is not
 always straightforward when running `dcm2niix` on its own, but there are 
