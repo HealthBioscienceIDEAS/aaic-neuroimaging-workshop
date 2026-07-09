@@ -243,7 +243,7 @@ Then we will run this command to get the total grey matter volume:
 fslstats c1sub-OAS30003_T1w.nii -V
 ```
 ```output
-719954 961026.312500
+679428 906930.312500
 ```
 This will produce two numbers. The first number is the number of voxels in the 
 grey matter. These voxels as discussed earlier have physical dimensions 
