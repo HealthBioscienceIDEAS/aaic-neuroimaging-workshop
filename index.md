@@ -4,9 +4,9 @@ site: sandpaper::sandpaper_site
 
 |  |  |
 | --- | --- |
-| Date | Friday 10th July 2026 |
-| Time | 8:00AM - 12:00PM British Summer Time | 
-| Location | Aurora Ballroom 2, 3, 5, 6 — InterContinental-The O2 — London, United Kingdom |
+| Date | Tuesday 22nd September 2026 |
+| Time | 8:00AM - 11:50AM Central European Summer Time | 
+| Location | Facultat de Medicina – University of Barcelona<br>Carrer de Casanova, 143<br>08036 Barcelona<br> |
 | Format | In-person workshop | 
 
 The workshop will provide practical information and an enhanced understanding
@@ -82,15 +82,15 @@ modalities used in dementia research.
 
 | Time | Topic | Leader(s) | 
 | --- | --- | --- |
-| 8:00-8:10 AM | Opening Remarks | David Cash and Tobey Betthauser |
-| 8:10-8:40 AM |  Image data: Basic Structure and Function | Ludovica Griffanti | 
+| 8:00-8:10 AM | Opening Remarks | David Cash |
+| 8:10-8:40 AM |  Image data: Basic Structure and Function | David Cash | 
 | 8:40-9:10 AM | Structural MRI | David Cash | 
 | 9:10-9:20 AM | Break | |
-| 9:20-9:50 AM | Introduction to Advanced Imaging Analysis Sections (PET, dMRI,fMRI) | Tobey Betthauser, Alexa Pichet Binette, Luigi Lorenzini |
+| 9:20-9:50 AM | Introduction to Advanced Imaging Analysis Sections (PET, dMRI,fMRI) | Roser Sala-Llonch, María Cabello, Luigi Lorenzini |
 | 9:50-10:40 AM | Independent working session 1: Diffsion MRI, functional MRI, PET | Facilitated by all organizers |
 | 10:40-10:50 AM | Break | |
 | 10:50-11:40 AM | Independent working session 2: Diffsion MRI, functional MRI, PET   | Facilitated by all organizers |
-| 11:40AM - 12:00 PM | Wrapup, Q&A, feedback | David Cash and Tobey Betthauser |
+| 11:40AM - 11:50 AM | Wrapup, Q&A, feedback | All organisers |
 
 
 
