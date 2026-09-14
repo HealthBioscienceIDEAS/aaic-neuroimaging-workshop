@@ -9,9 +9,16 @@ The following committee members have been developing and testing the content and
 | --- | --- |
 | David Cash | UCL Queen Square Institute of Neurology, United Kingdom |
 | Luigi Lorenzini | University of Genoa, Italy |
-| Ludovica Griffanti | University of Oxford, United Kingdom |
-| Tobey Betthauser | University of Wisconsin, U.S.A. | 
-| Alexa Pichet Binette | Université de Montréal, Canada |
+| Roser Sala-Llonch | University of Barcelona |
+| María Cabello | University of Barcelona and University of Lausanne | 
+
+And thanks to the Neuroimaging PIA organisers who have contributed to previous
+workshops: 
+
+- Tobey Betthauser (University Wisconsin-Madison)
+- Alexa Pichet Binette (Université de Montréal, Canada)
+- Ludovica Griffanti (University of Oxford)
+- Tavia Evans (Radbound UMC, Nijmegen, Netherlands)
 
 ### Acknowledgements
 These lessons are developed as part of the [Health and Biosciences IDEAS](https://healthbioscienceideas.github.io) project, which is a training initiative funded by [UKRI Innovation Scholars](https://www.ukri.org/opportunity/innovation-scholars-data-science-training-in-health-bioscience/) (MR/V03863X/1)
